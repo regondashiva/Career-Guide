@@ -6,70 +6,70 @@
     <title>Education Stage Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-       
+        /* Custom styles to complement Tailwind */
         body {
             font-family: "Inter", sans-serif;
-     }
-
-       
-        .navbar {
-             background-color: #1e3c72; 
-             padding: 1rem;
-             color: white;
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-             font-size: 1rem; 
-             font-weight: bold;
-             position: sticky;
-             top: 0;
-             height: 90px;
-             z-index: 1000;
-             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
-         }
-
-         .navbar .container {
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-             width: 100%;
-             max-width: 1200px; 
-             margin: 0 auto; 
-             padding: 0 1rem; 
-         }
-
-
-         .navbar ul {
-             display: flex;
-             justify-content: flex-end;
-             list-style: none;
-             gap: 2rem; 
-             margin: 0; 
-             padding: 0; 
-         }
-
-         .navbar ul li a {
-             text-decoration: none;
-             color: white; 
-             font-weight: 600; 
-             padding: 0.5rem 0.8rem;
-             border-radius: 4px;
-             transition: background-color 0.3s ease;
-         }
-          .navbar ul li a:hover {
-             background-color: rgba(255, 255, 255, 0.1); 
-         }
-
-
-         .navbar .logo {
-             height: 40px; 
-             filter: invert(1); 
-         }
-
-        .logo-card {
-            flex-shrink: 0;
+            /* Tailwind handles background color: bg-gray-100 */
+            /* Tailwind handles padding: py-8 on container */
         }
-.mobile-menu-button {
+
+        /* Navbar Styling (keeping custom as it's already defined) */
+        .navbar {
+            background-color: #1e3c72; /* Dark blue */
+            padding: 1rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem; /* Adjusted font size */
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            height: 90px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px; /* Match container max-width */
+            margin: 0 auto; /* Center the container */
+            padding: 0 1rem; /* Add some padding */
+        }
+
+        .navbar-links {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 2rem; /* Adjusted gap */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .navbar-links li a {
+            text-decoration: none;
+            color: white; /* White color for better contrast */
+            font-weight: 600; /* Adjusted weight */
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+         .navbar-links li a:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Subtle hover */
+        }
+
+
+        .navbar .logo {
+            height: 70px; /* Set logo height */
+            width: auto;
+             filter: invert(1); /* Optional: invert logo color if it's dark */
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-button {
             display: none; /* Hidden by default */
             cursor: pointer;
             background: none;
@@ -86,21 +86,29 @@
             margin: 5px auto;
             transition: all 0.3s ease-in-out;
         }
+
+        /* Logo Card Styling */
+        .logo-card {
+            flex-shrink: 0;
+            /* Tailwind handles: bg-gradient, text-white, w-64, h-40, flex, flex-col, items-center, justify-center, rounded-lg, shadow-xl, transform, transition, duration-300, hover:scale-105, cursor-pointer, p-4 */
+        }
+
+        /* Flowchart Section Styling */
         .flowchart-section {
             margin-top: 40px;
             text-align: center;
             overflow-x: auto;
             padding-bottom: 20px;
-            background-color: #ffffff; 
-            padding-top: 40px; 
+            background-color: #ffffff; /* White background for the section */
+            padding-top: 40px; /* Add padding at the top */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .flowchart-section h2 {
-            color: #1e3c72; 
-            margin-bottom: 2rem; 
-            font-size: 2rem; 
+            color: #1e3c72; /* Dark blue heading */
+            margin-bottom: 2rem; /* More space below heading */
+            font-size: 2rem; /* Adjusted font size */
             font-weight: 700;
         }
 
@@ -114,22 +122,62 @@
             margin: 0 auto;
         }
 
+        /* Responsive adjustments */
         @media (max-width: 768px) {
             .navbar {
-                 flex-direction: column;
-                 padding: 0.8rem;
-             }
-             .navbar .container {
-                 flex-direction: column;
-                 padding: 0 0.8rem;
-             }
-              .navbar ul {
-                  margin-top: 0.8rem;
-                  gap: 1rem;
-              }
-             .site-title {
-                 font-size: 1.5rem;
-             }
+                flex-direction: column;
+                align-items: flex-start; /* Align logo to the left on smaller screens */
+                padding: 0.8rem;
+                height: auto; /* Adjust height for stacked content */
+            }
+
+            .navbar .container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0;
+            }
+
+            .navbar-links {
+                display: none; /* Hide links by default on smaller screens */
+                flex-direction: column;
+                width: 100%;
+                margin-top: 0.5rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separator */
+            }
+
+            .navbar-links.active {
+                display: flex; /* Show links when active class is present */
+            }
+
+            .navbar-links li {
+                width: 100%;
+                text-align: center;
+                margin: 0.5rem 0;
+            }
+
+            .navbar-links li a {
+                display: block; /* Make links full width for easier tapping */
+                padding: 0.75rem 1rem;
+            }
+
+            .mobile-menu-button {
+                display: block; /* Show hamburger button */
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .mobile-menu-button.open .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .mobile-menu-button.open .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-button.open .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
 
             .container {
                 padding: 0 1rem;
@@ -141,29 +189,29 @@
              .flowchart-section h2 {
                  font-size: 1.8rem;
                  margin-bottom: 1.5rem;
-             }
+            }
         }
     </style>
 </head>
 <body class="bg-gray-100">
 
- <header class="navbar">
+    <div class="navbar">
         <div class="container">
-            <img style="height: 70px; width: 200px;" src="Care (1)(1).png" alt="Career Guidance Logo" >
+            <img style="height: 70px; width: auto;" src="Care (1)(1).png" alt="Career Guidance Logo" >
             <nav>
                 <button class="mobile-menu-button">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </button>
-                <ul>
-                    <li style="font-size: x-large;"><a href="Home.html">Home</a></li>
-                    <li style="font-size: x-large;"><a href="About.html">About us</a></li>
+                <ul class="navbar-links">
+                    <li style="font-size: x-large;"><a href="index.html">Home</a></li>
+                    <li style="font-size: x-large;"><a href="aboutus.html">About us</a></li>
                     <li style="font-size: x-large;"><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
-    </header>
+    </div>
 
 
     <div class="container mx-auto py-8">
@@ -198,11 +246,20 @@
     </div>
 
     <footer class="bg-gray-800 text-white text-center p-6 mt-8">
-         <div class="container mx-auto">
-             <p>&copy; 2025 Education Guide. All rights reserved.</p>
-         </div>
-     </footer>
+          <div class="container mx-auto">
+              <p>&copy; 2025 Education Guide. All rights reserved.</p>
+          </div>
+    </footer>
 
+    <script>
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const navbarLinks = document.querySelector('.navbar-links');
+
+        mobileMenuButton.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+            mobileMenuButton.classList.toggle('open');
+        });
+    </script>
 
 </body>
 </html>
