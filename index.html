@@ -8,8 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        
-        
+        /* --- General Styles --- */
         * {
             margin: 0;
             padding: 0;
@@ -18,24 +17,24 @@
 
         body {
             font-family: 'Segoe UI', sans-serif;
-            background-color: #f8f9fa; 
-            color: #2d2d2d; 
+            background-color: #f8f9fa; /* Light background */
+            color: #2d2d2d; /* Dark grey text */
             line-height: 1.7;
-            padding-top: 60px; 
+            padding-top: 70px; /* Space for fixed navbar */
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem; 
+            padding: 0 1.5rem; /* Consistent horizontal padding */
         }
 
         h1{
             font-family: 'Georgia', serif;
         }
          h2, h4, h5, h6 {
-             font-family: 'Segoe UI', sans-serif; 
-             color: #1e3c72; 
+             font-family: 'Segoe UI', sans-serif; /* Heading font */
+             color: #1e3c72; /* Dark blue for headings */
          }
 h3{
     color: red;
@@ -44,22 +43,23 @@ h3{
   font-size: 20px;
 }
 
-    .navbar {
-            background-color: #1e3c72; 
-            padding: 0.8rem 0; 
+        /* --- Navbar --- */
+        .navbar {
+            background-color: #1e3c72; /* Dark blue */
+            padding: 0.8rem 0; /* Adjusted padding */
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 1rem; 
+            font-size: 1rem; /* Adjusted font size */
             font-weight: bold;
-            position: fixed; 
+            position: fixed; /* Fixed navbar */
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
             height: 70px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
         }
 
          .navbar .container {
@@ -74,54 +74,75 @@ h3{
             display: flex;
             justify-content: flex-end;
             list-style: none;
-            gap: 2rem; 
-            margin: 0; 
-            padding: 0; 
+            gap: 2rem; /* Adjusted gap */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
         }
 
         .navbar ul li a {
             text-decoration: none;
-            color: white; 
-            font-weight: 500; 
+            color: white; /* White color for better contrast */
+            font-weight: 500; /* Adjusted weight */
             padding: 0.5rem 0.8rem;
             border-radius: 4px;
             transition: background-color 0.3s ease;
         }
 
          .navbar ul li a:hover {
-             background-color: rgba(255, 255, 255, 0.1); 
+             background-color: rgba(255, 255, 255, 0.1); /* Subtle hover */
          }
 
 
         .navbar .logo {
-            height: 40px; 
-             filter: invert(1); 
+            height: 40px; /* Set logo height */
+            /* Add styles for logo if needed */
+             filter: invert(1); /* Optional: invert logo color if it's dark */
         }
 
-.main-content {
+        /* --- Mobile Menu Button --- */
+        .mobile-menu-button {
+            display: none; /* Hidden by default */
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            outline: none;
+        }
+
+        .mobile-menu-button .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* --- Main Content (Hero Section) --- */
+        .main-content {
             display: flex;
-            flex-wrap: wrap; 
-            padding: 80px 0; 
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            padding: 80px 0; /* Vertical padding */
             align-items: center;
-            background: linear-gradient(to bottom, #eef7ff, #f8f9fa); 
+            background: linear-gradient(to bottom, #eef7ff, #f8f9fa); /* Subtle gradient background */
         }
 
         .main-content .container {
-             display: flex;
-             flex-wrap: wrap;
-             align-items: center;
-             justify-content: space-between;
-             gap: 3rem; 
-         }
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem; /* Gap between left and right sections */
+        }
 
         .left {
-            flex: 1; 
-            min-width: 300px; 
-            padding-right: 3rem; 
+            flex: 1; /* Allow left section to grow */
+            min-width: 300px; /* Minimum width before wrapping */
+            padding-right: 3rem; /* Space to the right of text */
         }
 
         .left h1 {
-            font-size: 3.5rem; 
+            font-size: 3.5rem; /* Adjusted size */
             font-weight: 700;
             margin-bottom: 0.8rem;
             line-height: 1.2;
@@ -129,37 +150,37 @@ h3{
 
         .left h1 span {
             display: block;
-            font-size: 2.8rem; 
+            font-size: 2.8rem; /* Adjusted size */
             font-style: italic;
-            color: #008080; 
+            color: #008080; /* Teal for span */
             margin-top: 0.5rem;
         }
 
         .welcome {
-            color: #dc3545; 
+            color: #dc3545; /* Red from original palette */
             font-style: italic;
-            margin: 1.5rem 0; 
-            font-size: 1.2rem; 
+            margin: 1.5rem 0; /* Adjusted margin */
+            font-size: 1.2rem; /* Adjusted size */
             font-weight: 500;
         }
 
         .left p {
-            font-size: 1.1rem; 
+            font-size: 1.1rem; /* Adjusted size */
             line-height: 1.6;
-            text-align: justify; 
-            margin-bottom: 2.5rem; 
+            text-align: justify; /* Align text left */
+            margin-bottom: 2.5rem; /* Adjusted margin */
         }
 
         .buttons {
             display: flex;
-            gap: 1.5rem; 
-             flex-wrap: wrap; 
+            gap: 1.5rem; /* Adjusted gap */
+            flex-wrap: wrap; /* Allow buttons to wrap */
         }
 
         .buttons button:hover {
-             transform: translateY(-3px); 
-             box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
-         }
+            transform: translateY(-3px); /* Lift button on hover */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add shadow on hover */
+        }
 
 
         .start-btn, .demo-btn {
@@ -168,44 +189,45 @@ h3{
             border: none;
             border-radius: 25px;
             cursor: pointer;
-            font-weight: 600; 
-            transition: all 0.3s ease; 
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
+
         .start-btn {
-            background-color: #ffc107; 
-            color: #1e3c72; 
+            background-color: #ffc107;
+            color: #1e3c72;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
         .demo-btn {
-            background-color: #ffffff; 
-            color: #1e3c72; 
-            border: 2px solid #1e3c72; 
-             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #ffffff;
+            color: #1e3c72;
+            border: 2px solid #1e3c72;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .right {
-            flex: 1; 
-            min-width: 300px; 
+            flex: 1;
+            min-width: 300px;
             position: relative;
-            height: 500px; 
-            display: flex; 
+            height: 500px;
+            display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .blue-bg {
             position: absolute;
-            bottom: -10px; 
+            bottom: -10px;
             left: 0px;
-           
-            width: 120%; 
-            height: 120%; 
-            background: linear-gradient(to bottom right, #007bff, #1a1ace); 
+
+            width: 120%;
+            height: 120%;
+            background: linear-gradient(to bottom right, #007bff, #1a1ace);
             border-radius: 10px;
             z-index: 0;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.3); 
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
         }
 
         .student-img {
@@ -214,23 +236,66 @@ h3{
             right: 50px;
             height: 100%;
             z-index: 1;
-            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)); 
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
         }
 
-        @media (max-width: 1024px) {
+        /* --- Media Queries for Responsiveness --- */
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none; /* Hide the navigation links on smaller screens */
+                flex-direction: column;
+                position: absolute;
+                top: 70px; /* Adjust based on navbar height */
+                left: 0;
+                background-color: #1e3c72;
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                padding: 1rem 0;
+            }
+
+            .navbar ul.active {
+                display: flex; /* Show the menu when the 'active' class is added */
+            }
+
+            .navbar ul li {
+                margin: 1rem 0;
+            }
+
+            .navbar ul li a {
+                padding: 0.8rem 1rem;
+                display: block; /* Make links full width for easier tapping */
+            }
+
+            .mobile-menu-button {
+                display: block; /* Show the hamburger button on smaller screens */
+            }
+
+            .mobile-menu-button.open .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .mobile-menu-button.open .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-button.open .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
             .main-content .container {
-                flex-direction: column; 
+                flex-direction: column;
                 gap: 2rem;
             }
 
             .left {
-                padding-right: 0; 
-                text-align: center; 
-                 order: 2; 
+                padding-right: 0;
+                text-align: center;
+                order: 2;
             }
 
              .left p {
-                 text-align: center; 
+                 text-align: center;
                  font-size: 16px;
                  line-height: 1.5;
                  text-align: justify;
@@ -239,35 +304,35 @@ h3{
 
 
             .right {
-                width: 100%; 
-                height: 400px; 
-                 order: 1; 
-                 padding-bottom: 20px; 
+                width: 100%;
+                height: 400px;
+                order: 1;
+                padding-bottom: 20px;
             }
 
-             
-         .blue-bg {
-             position: relative;
-             bottom: 50px;
-             right: 0;
-             width: 300px;
-             height: 120%;
-             background: linear-gradient(to right, #1a1ace, #1972cc);
-             border-radius: 10px;
-              z-index: 0;
-        }
-             
+
+       .blue-bg {
+           position: relative;
+           bottom: 50px;
+           right: 0;
+           width: 300px;
+           height: 120%;
+           background: linear-gradient(to right, #1a1ace, #1972cc);
+           border-radius: 10px;
+            z-index: 0;
+       }
+
 
             .student-img {
                  position: absolute;
-                top:40px;
-                right: 30px;
-                height: 100%;
+                 top:40px;
+                 right: 30px;
+                 height: 100%;
                  z-index: 1;
             }
 
              .buttons {
-                 justify-content: center; 
+                 justify-content: center;
              }
 
              h1 {
@@ -287,28 +352,23 @@ h3{
                   margin-bottom: 2rem;
               }
 
-               .start-btn, .demo-btn {
-                   padding: 10px 20px;
-                   font-size: 1rem;
-               }
+              .start-btn, .demo-btn {
+                  padding: 10px 20px;
+                  font-size: 1rem;
+             }
         }
 
         @media (max-width: 600px) {
             body {
-                padding-top: 50px;
+                padding-top: 60px;
             }
             .navbar {
-                 padding: 0.6rem 0;
-             }
-             .navbar ul {
-                 gap: 0.8rem;
-             }
-             .site-title {
-                 font-size: 1.4rem;
-             }
-             .navbar .logo {
-                 height: 35px;
-             }
+                padding: 0.6rem 0;
+            }
+            .navbar .logo {
+                height: 35px;
+                width: auto; /* Maintain aspect ratio */
+            }
 
             .main-content {
                 padding: 50px 0;
@@ -332,21 +392,21 @@ h3{
               }
 
               .buttons {
-                  flex-direction: column; 
-                  align-items: center; 
+                  flex-direction: column;
+                  align-items: center;
               }
 
                .start-btn, .demo-btn {
-                   width: 80%; 
-                   max-width: 250px; 
-               }
+                   width: 80%;
+                   max-width: 250px;
+              }
         }
     </style>
 </head>
 <body>
-   <header class="navbar">
+    <header class="navbar">
         <div class="container">
-            <img style="height: 70px; width: 200px;" src="Care (1)(1).png" alt="Career Guidance Logo" >
+            <img style="height: 70px; width: auto;" src="Care (1)(1).png" alt="Career Guidance Logo" class="logo">
             <nav>
                 <button class="mobile-menu-button">
                     <span class="bar"></span>
@@ -354,8 +414,8 @@ h3{
                     <span class="bar"></span>
                 </button>
                 <ul>
-                    <li style="font-size: x-large;"><a href="index.html">Home</a></li>
-                    <li style="font-size: x-large;"><a href="aboutus.html">About us</a></li>
+                    <li style="font-size: x-large;"><a href="Home.html">Home</a></li>
+                    <li style="font-size: x-large;"><a href="About.html">About us</a></li>
                     <li style="font-size: x-large;"><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -372,17 +432,17 @@ h3{
                     Our platform is designed to empower students, provides tailored resources for students at different
                     stages: for 6+ students, we focus on essential skill development and career exploration;
                     for 10+ students, we offer course options and career path guidance; and for 12+ students,
-                    we provide in-depth course information and job role insights to help them make informed 
+                    we provide in-depth course information and job role insights to help them make informed
                     decisions about their future.
                 </p>
                 <div class="buttons">
-                    <button onclick="navigate('Homepage2.html')" class="start-btn">Get Started</button>
-                    <button onclick="open('www.youtube.com')" class="demo-btn">Watch Demo</button>
+                    <button onclick="navigate('home2.html')" class="start-btn">Get Started</button>
+                    <button onclick="openDemo('www.youtube.com')" class="demo-btn">Watch Demo</button>
                 </div>
             </div>
             <div class="right">
                 <div class="blue-bg"></div>
-                <img src="h1.png" alt="Student Illustration" class="student-img" />
+                <img src="design_img-removebg-preview.png" alt="Student Illustration" class="student-img" />
             </div>
         </div>
     </div>
@@ -391,11 +451,21 @@ h3{
         function navigate(page) {
             window.location.href = page;
         }
+
         function openDemo(url) {
             window.open(url, '_blank');
         }
 
         document.querySelector('.demo-btn').onclick = function() { openDemo('www.youtube.com'); };
+
+        // JavaScript for toggling the mobile menu
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const navLinks = document.querySelector('.navbar ul');
+
+        mobileMenuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuButton.classList.toggle('open');
+        });
     </script>
 </body>
 </html>
