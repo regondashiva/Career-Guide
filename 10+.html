@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance After 10th</title>
+    <link rel="stylesheet" href="style.css"> 
+ <style type="text/css">
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    color: #333;
+    padding-bottom: 60px; 
+}
+.navbar1 {
+            background-color: #1e3c72; 
+            padding: 0.8rem 0; 
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem; 
+            font-weight: bold;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+
+         .navbar1 .container {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             width: 100%;
+         }
+
+
+        .navbar1 ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 2rem; 
+            margin: -150px; 
+            padding: 0; 
+        }
+
+        .navbar1 ul li a {
+            text-decoration: none;
+            color: white; 
+            font-weight: 500; 
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+         .navbar1 ul li a:hover {
+             background-color: rgba(255, 255, 255, 0.1); 
+         }
+
+
+        .navbar1 .logo {
+            height: 40px; 
+            filter: invert(1); 
+        }
+
+header, footer {
+    background-color: #005f73; 
+    color: #ffffff;
+    text-align: center;
+    padding: 5rem 0;
+    margin-bottom: 4rem;
+}
+footer {
+     margin-top: 3rem;
+     padding: 0.8rem 0;
+     font-size: 0.9em;
+     position: relative; 
+     bottom: 0;
+     width: 100%;
+ }
+header h1 {
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #005f73;
+}
+
+.flowchart {
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.node {
+    background-color: #e0f7fa; 
+    border: 1px solid #b2ebf2; 
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    position: relative; 
+}
+
+.start-node {
+    background-color: #0077b6; 
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border-color: #023e8a;
+}
+
+.branch-node, .option-node {
+    background-color: #90e0ef; 
+        border-color: #48cae4;
+    font-weight: 500;
+}
+
+.detail-node {
+    background-color: #ffffff;
+    border: 1px dashed #a8dadc; 
+    padding: 0.8rem;
+    margin-top: -0.5rem; 
+     margin-left: 1.5rem; 
+}
+.detail-node strong {
+    color: #005f73;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.detail-node ul {
+    list-style: none; 
+    padding-left: 0;
+}
+.detail-node li {
+    padding: 0.3rem 0;
+    border-bottom: 1px dotted #eee;
+}
+.detail-node li:last-child {
+    border-bottom: none;
+}
+
+.eligibility {
+    background-color: #f8f9fa; 
+    border: 1px solid #e9ecef;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    margin-left: 1.5rem; 
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.eligibility p {
+    margin-bottom: 0.5rem;
+}
+.eligibility strong {
+    color: #d90429; 
+}
+.eligibility a {
+    color: #0077b6;
+    text-decoration: none;
+}
+.eligibility a:hover {
+    text-decoration: underline;
+}
+
+.important-note {
+    background-color: #fff3cd; 
+    border-color: #ffeeba;
+    color: #856404; 
+    font-size: 0.95em;
+    margin-top: 1.5rem;
+}
+.important-note strong {
+    color: #d90429; 
+}
+
+.branches {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 2rem;
+    margin-top: 1rem;
+    padding-left: 1.5rem; 
+        border-left: 2px solid #0077b6; 
+}
+
+.branch-container {
+     flex: 1; 
+     min-width: 250px; 
+}
+
+.options {
+    padding-left: 1.5rem; 
+    margin-top: 1rem;
+     border-left: 2px dashed #48cae4; 
+}
+.details {
+     padding-left: 0; 
+     margin-top: 1rem;
+ }
+
+.clickable {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.clickable:hover {
+    background-color: #ade8f4; 
+}
+.detail-node li.clickable:hover {
+     background-color: #e9f7fa; 
+ }
+
+.toggle-icon {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.clickable.open .toggle-icon {
+    transform: rotate(45deg); 
+}
+
+
+@media (max-width: 768px) {
+    .branches {
+        flex-direction: column; 
+        padding-left: 1rem;
+        gap: 1rem;
+         border-left: none; 
+    }
+    .options, .details, .eligibility, .detail-node {
+        margin-left: 0.5rem; 
+        padding-left: 0.5rem;
+    }
+     .node {
+         padding: 0.6rem 1rem;
+     }
+     header h1 { font-size: 1.5em; }
+}
+    </style>
+    </head>
+<body>
+    <header class="navbar1">
+        <div class="container">
+            <div  class="logo-box">
+                <img style="height: 70px; width: 200px;" src="Care (1)(1).png" alt="Career Guidance Logo" >
+            </div>
+            <ul>
+                <li style="font-size: x-large;"><a href="Home.html">Home</a></li>
+                <li style="font-size: x-large;"><a href="About.html">About us</a></li>
+                <li style="font-size: x-large;"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <header style="padding-top: 130px;">
+        <h1>Career Guidance: After 10th Standard</h1>
+        <p>Explore the major academic and vocational paths available.</p>
+    </header>
+
+    <main class="container">
+        <h2>Choose Your Path After 10th:</h2>
+
+        <div class="flowchart">
+            <div class="node start-node">
+                <span>Completed 10th Standard</span>
+            </div>
+
+            <div class="branches">
+
+                <div class="branch-container">
+                    <div class="node branch-node clickable" data-target="hs-options">
+                        <span>Higher Secondary (Class 11 & 12 / Intermediate)</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="options hidden" id="hs-options">
+                        <p>This is the most common path, leading to University degrees. Choosing a stream here is crucial for future options.</p>
+
+                        <div class="node option-node clickable" data-target="hs-science-details">
+                            <span>Science Stream</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="hs-science-details">
+                            <div class="node detail-node">
+                                <strong>Typical Subjects:</strong>
+                                <ul>
+                                    <li>Physics, Chemistry (Compulsory)</li>
+                                    <li>Mathematics (PCM group) OR Biology (PCB group) OR Both (PCMB group)</li>
+                                    <li>English (Compulsory)</li>
+                                    <li>Optional Subject (e.g., Computer Science, Physical Education, Economics, etc.)</li>
+                                </ul>
+                                <strong>Leads To (After 12th):</strong>
+                                <ul>
+                                    <li><strong>PCM:</strong> Engineering (via JEE, State CETs), B.Sc (Maths, Physics, Chem, CS), Architecture (via NATA/JEE), NDA, BCA, Merchant Navy, B.Des.</li>
+                                    <li><strong>PCB:</strong> Medicine/Dental/AYUSH (via NEET), Veterinary (via NEET/State Exams), Pharmacy, Nursing, B.Sc (Biology, Biotech, Microbio, etc.), Physiotherapy, Allied Health Sciences.</li>
+                                    <li><strong>PCMB:</strong> Keeps options open for both Engineering & Medical fields (but demanding).</li>
+                                </ul>
+                                <strong>Admission Basis:</strong> Usually based on 10th standard marks and school criteria.
+                            </div>
+                        </div>
+
+                        <div class="node option-node clickable" data-target="hs-commerce-details">
+                            <span>Commerce Stream</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="hs-commerce-details">
+                            <div class="node detail-node">
+                                <strong>Typical Subjects:</strong>
+                                <ul>
+                                    <li>Accountancy, Business Studies, Economics (Core)</li>
+                                    <li>English (Compulsory)</li>
+                                    <li>Mathematics (Often Optional, but recommended/required for some higher studies like Eco Hons, BBA)</li>
+                                    <li>Optional Subject (e.g., Computer Science, Informatics Practices, Physical Education, Entrepreneurship)</li>
+                                </ul>
+                                <strong>Leads To (After 12th):</strong>
+                                <ul>
+                                    <li>B.Com, BBA/BMS (Management Studies), Economics Hons.</li>
+                                    <li>Professional Courses: CA (Chartered Accountancy), CS (Company Secretary), CMA (Cost Management Accountancy) - via Foundation route after 12th.</li>
+                                    <li>Law (Integrated LLB), Hotel Management, BCA (if Maths/CS taken), B.Des.</li>
+                                    <li>Exams like CUET, IPMAT, CLAT, NCHM JEE, CA/CS/CMA Foundation become relevant after 12th.</li>
+                                </ul>
+                                <strong>Admission Basis:</strong> Usually based on 10th standard marks and school criteria.
+                            </div>
+                        </div>
+
+                        <div class="node option-node clickable" data-target="hs-arts-details">
+                            <span>Arts / Humanities Stream</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="hs-arts-details">
+                            <div class="node detail-node">
+                                <strong>Typical Subjects:</strong> (Varies widely)
+                                <ul>
+                                    <li>History, Geography, Political Science, Sociology, Psychology, Economics (Choose a combination)</li>
+                                    <li>English (Compulsory)</li>
+                                    <li>Regional Language / Optional Language</li>
+                                    <li>Optional Subject (e.g., Mathematics, Home Science, Fine Arts, Physical Education, Computer Science)</li>
+                                </ul>
+                                <strong>Leads To (After 12th):</strong>
+                                <ul>
+                                    <li>B.A. (in various subjects like History, Pol Sci, English Lit., Psychology, Sociology, etc.)</li>
+                                    <li>Law (Integrated LLB), Journalism & Mass Communication, Social Work (BSW).</li>
+                                    <li>Hotel Management, Design (B.Des), Fine Arts (BFA), Event Management.</li>
+                                    <li>Teaching (e.g., B.El.Ed or B.A + B.Ed), Civil Services preparation.</li>
+                                     <li>Exams like CUET, CLAT, NCHM JEE, NIFT/NID/UCEED become relevant after 12th.</li>
+                                </ul>
+                                <strong>Admission Basis:</strong> Usually based on 10th standard marks and school criteria.
+                            </div>
+                        </div>
+                    </div>
+                </div> <div class="branch-container">
+                    <div class="node branch-node clickable" data-target="poly-options">
+                        <span>Diploma Courses (Polytechnic)</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="options hidden" id="poly-options">
+                        <p>These are 3-year technical courses offering specialization in engineering fields.</p>
+                        <div class="node option-node clickable" data-target="poly-details">
+                            <span>Common Diploma Fields</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="poly-details">
+                            <div class="node detail-node">
+                                <strong>Fields:</strong>
+                                <ul>
+                                    <li>Civil Engineering</li>
+                                    <li>Mechanical Engineering</li>
+                                    <li>Electrical Engineering</li>
+                                    <li>Electronics & Communication Engineering (ECE)</li>
+                                    <li>Computer Science & Engineering (CSE)</li>
+                                    <li>Automobile Engineering</li>
+                                    <li>Chemical Engineering</li>
+                                    <li>Information Technology (IT)</li>
+                                    <li>And many others...</li>
+                                </ul>
+                                <strong>Admission Basis / Exams:</strong>
+                                <ul>
+                                    <li class="clickable" data-target="polycet-info">State Level Polytechnic Entrance Exams (e.g., POLYCET, JEXPO, DET) <span class="toggle-icon">+</span></li>
+                                    <div class="eligibility hidden" id="polycet-info">
+                                        <p><strong>Eligibility:</strong> Generally requires passing 10th standard with Maths & Science subjects. Minimum percentage criteria may apply. Check the respective State Board of Technical Education website.</p>
+                                    </div>
+                                </ul>
+                                <strong>Leads To:</strong>
+                                <ul>
+                                    <li>Jobs as Junior Engineer, Technician, Supervisor in relevant industries.</li>
+                                    <li>Lateral Entry (direct admission to 2nd year) into B.E./B.Tech programs after completing the diploma.</li>
+                                    <li>Self-employment.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> <div class="branch-container">
+                    <div class="node branch-node clickable" data-target="iti-options">
+                        <span>ITI (Industrial Training Institute) Courses</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="options hidden" id="iti-options">
+                         <p>These are shorter vocational training courses focused on specific technical trades (skills).</p>
+                        <div class="node option-node clickable" data-target="iti-details">
+                            <span>Popular ITI Trades</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="iti-details">
+                            <div class="node detail-node">
+                                <strong>Trades (Examples):</strong>
+                                <ul>
+                                    <li>Electrician</li>
+                                    <li>Fitter</li>
+                                    <li>Welder</li>
+                                    <li>Plumber</li>
+                                    <li>Mechanic (Motor Vehicle, Diesel, Refrigeration & AC)</li>
+                                    <li>Computer Operator & Programming Assistant (COPA)</li>
+                                    <li>Draughtsman (Civil / Mechanical)</li>
+                                    <li>Turner / Machinist</li>
+                                    <li>Stenographer</li>
+                                    <li>Many more...</li>
+                                </ul>
+                                 <strong>Duration:</strong> 6 Months to 2 Years, depending on the trade.
+                                <strong>Admission Basis:</strong>
+                                <ul>
+                                     <li>Primarily based on marks obtained in 10th standard (or 8th for some trades).</li>
+                                     <li>Admission process handled by State Directorates of Vocational Training. Check respective state's ITI admission portal.</li>
+                                </ul>
+                                  <p><strong>Eligibility:</strong> Varies by trade (usually 8th or 10th pass). Check Directorate General of Training (DGT) / State portal.</p>
+                                <strong>Leads To:</strong>
+                                <ul>
+                                    <li>Skilled Technician jobs in industries (manufacturing, construction, automotive, IT support, etc.).</li>
+                                    <li>Govt jobs (e.g., Railways - Assistant Loco Pilot, Technician often require ITI).</li>
+                                    <li>Self-employment / Entrepreneurship.</li>
+                                    <li>Further training (Apprenticeship under NAPS).</li>
+                                    <li>Possibility of lateral entry into Polytechnic Diploma (depending on state rules).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> <div class="branch-container">
+                    <div class="node branch-node clickable" data-target="other-10th-options">
+                        <span>Other Vocational / Short-Term Options</span>
+                         <span class="toggle-icon">+</span>
+                    </div>
+                     <div class="options hidden" id="other-10th-options">
+                         <div class="node detail-node">
+                             <ul>
+                                 <li><strong>Paramedical Certificate/Diploma Courses:</strong> Some basic courses like Dresser, Medical Lab Assistant might be available, but most Diplomas (DMLT, etc.) require 10+2 Science. Check specific course eligibility.</li>
+                                 <li><strong>Skill Development Courses:</strong> Offered by NSDC (National Skill Development Corporation) partners, PMKVY (Pradhan Mantri Kaushal Vikas Yojana) centers focusing on job-specific skills (e.g., retail, hospitality, beauty & wellness, ITES).</li>
+                                 <li><strong>Preparation for Specific Govt Jobs:</strong> Directly preparing for exams where 10th is the eligibility (e.g., SSC MTS, some Police Constable roles - but check latest notifications as requirements change).</li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div> </div>
+
+            <div class="node important-note">
+                <strong>Important Note:</strong> Choosing a path after 10th is a significant decision. Higher Secondary (11th-12th) keeps university degree options broad. Diplomas offer technical specialization faster. ITI courses provide direct job-oriented skills. Research each path thoroughly based on your interests, aptitude, and long-term goals. Always check official websites of boards (CBSE, ICSE, State Boards), technical education departments, and skill development agencies for the latest information.
+            </div>
+
+        </div></main>
+
+    <footer>
+        <p>&copy; 2025 Career Guidance Portal. Information purposes only.</p>
+        <p>Current Date: <span id="current-date"></span></p>
+    </footer>
+
+     <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+    const clickables = document.querySelectorAll('.clickable');
+    const today = new Date();
+    const dateElement = document.getElementById('current-date');
+
+    if (dateElement) {
+        dateElement.textContent = today.toLocaleDateString('en-IN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    }
+
+    clickables.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetId = item.getAttribute('data-target');
+            if (!targetId) return; 
+            const targetElement = document.getElementById(targetId);
+            if (!targetElement) return; 
+
+            const isHidden = targetElement.classList.toggle('hidden');
+
+            item.classList.toggle('open', !isHidden);
+
+            const icon = item.querySelector('.toggle-icon');
+            if (icon) {
+                icon.textContent = isHidden ? '+' : '-';
+            }
+
+        });
+    });
+});
+    </script>
+</body>
+</html>

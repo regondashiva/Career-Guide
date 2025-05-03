@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Stage Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+       
+        body {
+            font-family: "Inter", sans-serif;
+     }
+
+       
+        .navbar {
+             background-color: #1e3c72; 
+             padding: 1rem;
+             color: white;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             font-size: 1rem; 
+             font-weight: bold;
+             position: sticky;
+             top: 0;
+             height: 90px;
+             z-index: 1000;
+             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+         }
+
+         .navbar .container {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             width: 100%;
+             max-width: 1200px; 
+             margin: 0 auto; 
+             padding: 0 1rem; 
+         }
+
+
+         .navbar ul {
+             display: flex;
+             justify-content: flex-end;
+             list-style: none;
+             gap: 2rem; 
+             margin: 0; 
+             padding: 0; 
+         }
+
+         .navbar ul li a {
+             text-decoration: none;
+             color: white; 
+             font-weight: 600; 
+             padding: 0.5rem 0.8rem;
+             border-radius: 4px;
+             transition: background-color 0.3s ease;
+         }
+          .navbar ul li a:hover {
+             background-color: rgba(255, 255, 255, 0.1); 
+         }
+
+
+         .navbar .logo {
+             height: 40px; 
+             filter: invert(1); 
+         }
+
+        .logo-card {
+            flex-shrink: 0;
+        }
+
+        .flowchart-section {
+            margin-top: 40px;
+            text-align: center;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            background-color: #ffffff; 
+            padding-top: 40px; 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .flowchart-section h2 {
+            color: #1e3c72; 
+            margin-bottom: 2rem; 
+            font-size: 2rem; 
+            font-weight: 700;
+        }
+
+
+        .flowchart-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                 flex-direction: column;
+                 padding: 0.8rem;
+             }
+             .navbar .container {
+                 flex-direction: column;
+                 padding: 0 0.8rem;
+             }
+              .navbar ul {
+                  margin-top: 0.8rem;
+                  gap: 1rem;
+              }
+             .site-title {
+                 font-size: 1.5rem;
+             }
+
+            .container {
+                padding: 0 1rem;
+            }
+            .flowchart-section {
+                margin-top: 30px;
+                padding-top: 30px;
+            }
+             .flowchart-section h2 {
+                 font-size: 1.8rem;
+                 margin-bottom: 1.5rem;
+             }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="navbar">
+         <div class="container">
+            <img style="height: 70px; width: 200px;" src="Care (1)(1).png" alt="Career Guidance Logo" >
+             <ul>
+                 <li style="font-size: x-large;"><a href="home.html">Home</a></li>
+                 <li style="font-size: x-large;"><a href="About.html">About us</a></li>
+                 <li style="font-size: x-large;"><a href="contact.html">Contact</a></li>
+             </ul>
+         </div>
+     </div>
+
+
+    <div class="container mx-auto py-8">
+
+        <div class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-8 mb-12">
+            <div class="logo-card bg-gradient-to-r from-orange-500 to-orange-600 text-white w-64 h-40 flex flex-col items-center justify-center rounded-lg shadow-xl transform transition duration-300 hover:scale-105 cursor-pointer p-4" onclick="window.open('6+.html')">
+                <div class="text-4xl font-bold mb-2">6+</div>
+                <div class="text-lg text-center">Guidance before 10th <br> Click here</div>
+            </div>
+
+            <div class="logo-card bg-gradient-to-r from-blue-500 to-blue-600 text-white w-64 h-40 flex flex-col items-center justify-center rounded-lg shadow-xl transform transition duration-300 hover:scale-105 cursor-pointer p-4" onclick="window.open('10th.html')">
+                <div class="text-4xl font-bold mb-2">10+</div>
+                <div class="text-lg text-center">Guidance After 10th <br> Click here</div>
+            </div>
+
+            <div class="logo-card bg-gradient-to-r from-green-500 to-green-600 text-white w-64 h-40 flex flex-col items-center justify-center rounded-lg shadow-xl transform transition duration-300 hover:scale-105 cursor-pointer p-4" onclick="window.open('12th.html')">
+                <div class="text-4xl font-bold mb-2">12+</div>
+                <div class="text-lg text-center">Guidance After 12th <br> Click here</div>
+            </div>
+
+            <div class="logo-card bg-gradient-to-r from-purple-500 to-purple-600 text-white w-64 h-40 flex flex-col items-center justify-center rounded-lg shadow-xl transform transition duration-300 hover:scale-105 cursor-pointer p-4" onclick="window.open('afterdegree.html')"> <div class="text-4xl font-bold mb-2">DEG+</div>
+                <div class="text-lg text-center">Guidance After Degree <br> Click here</div>
+            </div>
+
+        </div>
+
+        <div class="flowchart-section">
+            <h2>Career Guidance Flowchart</h2>
+            <img src="carer-chart copy.jpg" alt="Career Guidance Flowchart" class="flowchart-image">
+        </div>
+
+    </div>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-8">
+         <div class="container mx-auto">
+             <p>&copy; 2025 Education Guide. All rights reserved.</p>
+         </div>
+     </footer>
+
+
+</body>
+</html>

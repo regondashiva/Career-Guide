@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning & Exploration Guide (Before 10th)</title>
+     <style type="text/css">
+  
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    color: #333;
+    padding-bottom: 60px; 
+}
+.navbar1 {
+            background-color: #1e3c72; 
+            padding: 0.8rem 0; 
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem; 
+            font-weight: bold;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+
+         .navbar1 .container {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             width: 100%;
+         }
+
+
+        .navbar1 ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 2rem;
+            margin: -150px; 
+            padding: 0; 
+        }
+
+        .navbar1 ul li a {
+            text-decoration: none;
+            color: white; 
+            font-weight: 500; 
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            
+        }
+
+         .navbar1 ul li a:hover {
+             background-color: rgba(255, 255, 255, 0.1);
+         }
+
+
+        .navbar1 .logo {
+            height: 40px; 
+            filter: invert(1); 
+        }
+header, footer {
+    background-color: #005f73; 
+    color: #ffffff;
+    text-align: center;
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+}
+footer {
+     margin-top: 5rem;
+     padding: 0.8rem 0;
+     font-size: 0.9em;
+     position: relative; 
+     bottom: 0;
+     width: 100%;
+ }
+header h1 {
+    margin-bottom: 2rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #005f73;
+}
+
+.flowchart {
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.node {
+    background-color: #e0f7fa; 
+    border: 1px solid #b2ebf2; 
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    position: relative; 
+}
+
+.start-node {
+    background-color: #0077b6; 
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border-color: #023e8a;
+}
+
+.branch-node, .option-node {
+    background-color: #90e0ef; 
+    border-color: #48cae4;
+    font-weight: 500;
+}
+
+.detail-node {
+    background-color: #ffffff;
+    border: 1px dashed #a8dadc; 
+    padding: 0.8rem;
+    margin-top: -0.5rem; 
+     margin-left: 1.5rem; 
+}
+.detail-node strong {
+    color: #005f73;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.detail-node ul {
+    list-style: none; 
+    padding-left: 0;
+}
+.detail-node li {
+    padding: 0.3rem 0;
+    border-bottom: 1px dotted #eee;
+}
+.detail-node li:last-child {
+    border-bottom: none;
+}
+
+.eligibility {
+    background-color: #f8f9fa; 
+    border: 1px solid #e9ecef;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    margin-left: 1.5rem; 
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.eligibility p {
+    margin-bottom: 0.5rem;
+}
+.eligibility strong {
+    color: #d90429; 
+}
+.eligibility a {
+    color: #0077b6;
+    text-decoration: none;
+}
+.eligibility a:hover {
+    text-decoration: underline;
+}
+
+.important-note {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404; 
+    font-size: 0.95em;
+    margin-top: 1.5rem;
+}
+.important-note strong {
+    color: #d90429; 
+}
+
+.branches {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 2rem;
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid #0077b6; 
+}
+
+.branch-container {
+     flex: 1;
+     min-width: 250px; 
+}
+
+.options {
+    padding-left: 1.5rem; 
+    margin-top: 1rem;
+     border-left: 2px dashed #48cae4; 
+}
+.details {
+     padding-left: 0; 
+     margin-top: 1rem;
+ }
+
+.clickable {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.clickable:hover {
+    background-color: #ade8f4; 
+}
+.detail-node li.clickable:hover {
+     background-color: #e9f7fa;
+ }
+
+.toggle-icon {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.clickable.open .toggle-icon {
+    transform: rotate(45deg);
+}
+
+
+@media (max-width: 768px) {
+    .branches {
+        flex-direction: column; 
+        padding-left: 1rem;
+        gap: 1rem;
+         border-left: none; 
+    }
+    .options, .details, .eligibility, .detail-node {
+        margin-left: 0.5rem; 
+        padding-left: 0.5rem;
+    }
+     .node {
+         padding: 0.6rem 1rem;
+     }
+     header h1 { font-size: 1.5em; }
+}
+    </style>
+    
+</head>
+<body>
+    <header class="navbar1">
+        <div class="container">
+            
+            <div  class="logo-box">
+                <img style="height: 70px; width: 200px;" src="Care (1)(1).png" alt="Career Guidance Logo" >
+            </div>
+            <ul>
+                <li style="font-size: x-large;"><a href="Home.html">Home</a></li>
+                <li style="font-size: x-large;"><a href="About.html">About us</a></li>
+                <li style="font-size: x-large;"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <header style="padding-top: 130px;">
+        <h1>Learning & Exploration Guide (Before 10th Standard)</h1>
+        <p>Making the most of your middle and early high school years.</p>
+    </header>
+
+    <main class="container">
+        <h2>Focus Areas for Growth & Discovery:</h2>
+
+        <div class="flowchart"> <div class="node branch-node clickable" data-target="importance-details">
+                <span>Why Are Classes 6-10 So Important?</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="details hidden" id="importance-details">
+                <div class="node detail-node">
+                    <p>These years are crucial for building the foundation upon which all your future learning rests. Focus on:</p>
+                    <ul>
+                        <li><strong>Understanding Basics:</strong> Mastering fundamental concepts in Maths, Science, Languages, and Social Studies makes higher learning much easier.</li>
+                        <li><strong>Developing Study Habits:</strong> Learning how to manage time, take notes, revise regularly, and study effectively are skills that last a lifetime.</li>
+                        <li><strong>Building Discipline:</strong> Consistent effort, completing homework, and participating in class builds self-discipline.</li>
+                        <li><strong>Exploring Subjects:</strong> This is the time to get a feel for different subjects before you need to make choices about streams after 10th.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="node branch-node clickable" data-target="subjects-details">
+                <span>Building Strong Subject Foundations</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="details hidden" id="subjects-details">
+                <div class="node detail-node">
+                     <p>Every subject teaches you valuable skills:</p>
+                     <ul>
+                         <li><strong>Mathematics:</strong> Develops logical thinking, problem-solving abilities, and precision. Essential for science, engineering, finance, economics, and many other fields.
+                            <br><em>Tip: Practice regularly, understand 'why' formulas work, don't be afraid to ask for help.</em></li>
+                         <li><strong>Science (Physics, Chemistry, Biology):</strong> Helps understand the world around us, encourages curiosity, observation, and experimentation. Forms the base for careers in medicine, engineering, research, environmental science, etc.
+                             <br><em>Tip: Relate concepts to real life, visualize processes, do small experiments if possible.</em></li>
+                         <li><strong>Social Studies (History, Geography, Civics):</strong> Teaches about society, culture, past events, governance, and the world. Develops critical thinking, empathy, and awareness. Important for law, journalism, civil services, social work, etc.
+                             <br><em>Tip: Read beyond textbooks, discuss current events, look at maps, understand cause and effect.</em></li>
+                         <li><strong>Languages (English, Hindi, Regional):</strong> Crucial for communication (reading, writing, speaking, listening), expression, and understanding information. Essential for ALL career paths.
+                             <br><em>Tip: Read regularly, practice writing, try speaking confidently, build vocabulary.</em></li>
+                         <li><strong>Computer Science / IT (if applicable):</strong> Introduces digital literacy, logic, and potentially coding. Increasingly important in almost every field.
+                             <br><em>Tip: Be curious about how technology works, try simple coding activities online.</em></li>
+                     </ul>
+                </div>
+            </div>
+
+             <div class="node branch-node clickable" data-target="skills-details">
+                <span>Developing Essential Life Skills</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="details hidden" id="skills-details">
+                <div class="node detail-node">
+                     <p>Learning goes beyond textbooks. Focus on developing:</p>
+                     <ul>
+                         <li><strong>Communication:</strong> Clearly expressing your thoughts and ideas, both verbally and in writing. Actively listening to others.</li>
+                         <li><strong>Critical Thinking:</strong> Analysing information, questioning assumptions, forming reasoned judgments.</li>
+                         <li><strong>Problem Solving:</strong> Identifying issues, thinking of solutions, and trying them out.</li>
+                         <li><strong>Creativity:</strong> Thinking outside the box, coming up with new ideas, finding innovative solutions.</li>
+                         <li><strong>Collaboration:</strong> Working effectively with others in groups or teams.</li>
+                         <li><strong>Curiosity:</strong> Asking 'why' and wanting to learn more.</li>
+                         <li><strong>Time Management:</strong> Balancing studies, activities, and rest.</li>
+                     </ul>
+                      <em>How? Participate in debates, group projects, science fairs, essay writing, sports teams, cultural activities. Manage your homework schedule.</em>
+                </div>
+            </div>
+
+            <div class="node branch-node clickable" data-target="interests-details">
+                <span>Discovering Your Interests & Talents</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="details hidden" id="interests-details">
+                <div class="node detail-node">
+                    <p>This is the perfect time to explore! Don't worry about finding a 'career' yet, just find what excites you:</p>
+                     <ul>
+                         <li><strong>Try Hobbies:</strong> Painting, music, coding, gardening, cooking, robotics, writing, sports – anything that catches your fancy.</li>
+                         <li><strong>Read Widely:</strong> Explore different genres of books, magazines, articles online about various topics (science, history, technology, art, biographies).</li>
+                         <li><strong>Watch & Observe:</strong> Documentaries, informative videos, observing people working in different jobs (if possible), paying attention to news and current events.</li>
+                         <li><strong>Join Clubs & Activities:</strong> School clubs (Science, Maths, Eco, Debate, Drama, Art), NCC, Scouts & Guides offer great exposure.</li>
+                         <li><strong>Talk to People:</strong> Ask parents, teachers, relatives, or family friends about their jobs – what they do, what they like/dislike.</li>
+                          <li><strong>Small Projects:</strong> Try building something simple, writing a story, creating a presentation on a topic you like, helping with a community task.</li>
+                     </ul>
+                     <em>Note down what you enjoy doing and what you seem to be good at. Interests can change, and that's okay!</em>
+                </div>
+            </div>
+
+            <div class="node branch-node clickable" data-target="future-details">
+                <span>A Glimpse into the Future (After 10th)</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="details hidden" id="future-details">
+                <div class="node detail-node">
+                    <p>After 10th standard, you'll likely need to choose a path. The main options are:</p>
+                     <ul>
+                         <li><strong>Higher Secondary (Class 11-12):</strong> This involves choosing a stream:
+                            <ul>
+                                <li><strong>Science:</strong> Focuses on Physics, Chemistry, Maths/Biology. Leads towards Engineering, Medicine, Pure Sciences, etc.</li>
+                                <li><strong>Commerce:</strong> Focuses on Accountancy, Business Studies, Economics. Leads towards Business, Finance, CA/CS/CMA, etc.</li>
+                                <li><strong>Arts/Humanities:</strong> Focuses on History, Geography, Political Science, Languages, etc. Leads towards Law, Journalism, Civil Services, Teaching, Social Sciences, etc.</li>
+                            </ul>
+                         </li>
+                         <li><strong>Diploma (Polytechnic):</strong> Technical courses in engineering fields.</li>
+                         <li><strong>ITI Courses:</strong> Specific skill-based training for technical trades.</li>
+                     </ul>
+                     <p>The subjects you study well now, especially Maths, Science, and Languages, will help keep more options open for you after 10th.</p>
+                </div>
+            </div>
+
+            <div class="node branch-node clickable" data-target="learning-tips-details">
+                <span>Tips for Effective Learning</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="details hidden" id="learning-tips-details">
+                <div class="node detail-node">
+                    <ul>
+                        <li><strong>Pay Attention in Class:</strong> Actively listen to your teachers.</li>
+                        <li><strong>Ask Questions:</strong> Don't hesitate to ask if you don't understand something.</li>
+                        <li><strong>Take Clear Notes:</strong> Summarize key points in your own words.</li>
+                        <li><strong>Understand Concepts:</strong> Focus on 'why' things work, not just memorizing facts (rote learning).</li>
+                        <li><strong>Revise Regularly:</strong> Go over what you learned briefly every day or week, not just before exams.</li>
+                        <li><strong>Stay Curious:</strong> Connect what you learn to the real world.</li>
+                         <li><strong>Practice Makes Perfect:</strong> Especially for subjects like Maths and writing.</li>
+                         <li><strong>Stay Healthy:</strong> Get enough sleep, eat well, and get some physical activity – it helps your brain work better!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="node important-note">
+                <strong>Enjoy the Journey!</strong> These school years are about learning, growing, exploring, and making friends. Focus on doing your best, stay curious, and don't put too much pressure on yourself to have all the answers about your future career right now. Keep exploring!
+            </div>
+
+        </div></main>
+
+    <footer>
+        <p>&copy; 2025 Learning & Exploration Guide. Information purposes only.</p>
+        <p>Current Date: <span id="current-date"></span></p> </footer>
+
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+    const clickables = document.querySelectorAll('.clickable');
+    const today = new Date();
+    const dateElement = document.getElementById('current-date');
+
+    if (dateElement) {
+        dateElement.textContent = today.toLocaleDateString('en-IN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    }
+
+    clickables.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetId = item.getAttribute('data-target');
+            if (!targetId) return;
+
+            const targetElement = document.getElementById(targetId);
+            if (!targetElement) return; 
+
+            const isHidden = targetElement.classList.toggle('hidden');
+
+            item.classList.toggle('open', !isHidden);
+
+            const icon = item.querySelector('.toggle-icon');
+            if (icon) {
+                icon.textContent = isHidden ? '+' : '-';
+            }
+
+        });
+    });
+});
+    </script>
+</body>
+</html>

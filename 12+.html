@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance After 12th</title>
+    <link rel="stylesheet" href="style.css"> </head>
+    <style type="text/css">
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    color: #333;
+    padding-bottom: 60px; 
+}
+.navbar1 {
+            background-color: #1e3c72; 
+            padding: 0.8rem 0; 
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem; 
+            font-weight: bold;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+
+         .navbar1 .container {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             width: 100%;
+         }
+
+
+        .navbar1 ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 2rem; 
+            margin: -150px; 
+            padding: 0; 
+        }
+
+        .navbar1 ul li a {
+            text-decoration: none;
+            color: white; 
+            font-weight: 500; 
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+         .navbar1 ul li a:hover {
+             background-color: rgba(255, 255, 255, 0.1); 
+         }
+
+
+        .navbar1 .logo {
+            height: 40px; 
+             filter: invert(1); 
+        }
+header, footer {
+    background-color: #005f73; 
+    color: #ffffff;
+    text-align: center;
+    padding: 5rem 0;
+    margin-bottom: 2rem;
+}
+footer {
+     margin-top: 3rem;
+     padding: 0.8rem 0;
+     font-size: 0.9em;
+     position: relative; 
+     bottom: 0;
+     width: 100%;
+ }
+header h1 {
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #005f73;
+}
+
+.flowchart {
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.node {
+    background-color: #e0f7fa; 
+    border: 1px solid #b2ebf2; 
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    position: relative; 
+}
+
+.start-node {
+    background-color: #0077b6; 
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border-color: #023e8a;
+}
+
+.branch-node, .option-node {
+    background-color: #90e0ef; 
+    border-color: #48cae4;
+    font-weight: 500;
+}
+
+.detail-node {
+    background-color: #ffffff;
+    border: 1px dashed #a8dadc; 
+    padding: 0.8rem;
+    margin-top: -0.5rem; 
+     margin-left: 1.5rem; 
+}
+.detail-node strong {
+    color: #005f73;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.detail-node ul {
+    list-style: none; 
+    padding-left: 0;
+}
+.detail-node li {
+    padding: 0.3rem 0;
+    border-bottom: 1px dotted #eee;
+}
+.detail-node li:last-child {
+    border-bottom: none;
+}
+
+.eligibility {
+    background-color: #f8f9fa; 
+    border: 1px solid #e9ecef;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    margin-left: 1.5rem; 
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.eligibility p {
+    margin-bottom: 0.5rem;
+}
+.eligibility strong {
+    color: #d90429; 
+}
+.eligibility a {
+    color: #0077b6;
+    text-decoration: none;
+}
+.eligibility a:hover {
+    text-decoration: underline;
+}
+
+.important-note {
+    background-color: #fff3cd; 
+    border-color: #ffeeba;
+    color: #856404; 
+    font-size: 0.95em;
+    margin-top: 1.5rem;
+}
+.important-note strong {
+    color: #d90429; 
+}
+
+.branches {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 2rem;
+    margin-top: 1rem;
+    padding-left: 1.5rem; 
+    border-left: 2px solid #0077b6; 
+}
+
+.branch-container {
+     flex: 1; 
+     min-width: 250px; 
+}
+
+.options {
+    padding-left: 1.5rem; 
+    margin-top: 1rem;
+     border-left: 2px dashed #48cae4; 
+    }
+.details {
+     padding-left: 0; 
+     margin-top: 1rem;
+ }
+
+.clickable {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.clickable:hover {
+    background-color: #ade8f4; 
+}
+.detail-node li.clickable:hover {
+     background-color: #e9f7fa; 
+     }
+
+.toggle-icon {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.clickable.open .toggle-icon {
+    transform: rotate(45deg); 
+}
+
+
+@media (max-width: 768px) {
+    .branches {
+        flex-direction: column; 
+        padding-left: 1rem;
+        gap: 1rem;
+         border-left: none; 
+    }
+    .options, .details, .eligibility, .detail-node {
+        margin-left: 0.5rem;
+        padding-left: 0.5rem;
+    }
+     .node {
+         padding: 0.6rem 1rem;
+     }
+     header h1 { font-size: 1.5em; }
+}
+    </style>
+<body>
+    <header class="navbar1">
+        <div class="container">
+            <div  class="logo-box">
+                <img style="height: 70px; width: 200px;" src="Care (1)(1).png" alt="Career Guidance Logo" >
+            </div>
+            <ul>
+                <li style="font-size: x-large;"><a href="Home.html">Home</a></li>
+                <li style="font-size: x-large;"><a href="About.html">About us</a></li>
+                <li style="font-size: x-large;"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <header style="padding-top: 130px;">
+        <h1>Career Guidance: After 12th Standard</h1>
+        <p>Explore common streams, courses, and entrance exams in India.</p>
+    </header>
+
+    <main class="container">
+        <h2>Choose Your 12th Standard Stream:</h2>
+
+        <div class="flowchart">
+            <div class="node start-node">
+                <span>Completed 12th Standard</span>
+            </div>
+
+            <div class="branches">
+
+                <div class="branch-container">
+                    <div class="node branch-node clickable" data-target="pcm-options">
+                        <span>Science (PCM - Physics, Chemistry, Maths)</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="options hidden" id="pcm-options">
+
+                        <div class="node option-node clickable" data-target="engg-details">
+                            <span>Engineering (B.E. / B.Tech)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="engg-details">
+                            <div class="node detail-node">
+                                <strong>Key Exams:</strong>
+                                <ul>
+                                    <li class="clickable" data-target="jee-info">JEE (Main & Advanced) <span class="toggle-icon">+</span></li>
+                                    <div class="eligibility hidden" id="jee-info">
+                                        <p><strong>Eligibility (JEE Main):</strong> Passed 12th (or equivalent) with Physics & Maths as compulsory subjects, plus one from Chem/Bio/Biotech/Tech.Voc. No age limit. Appears in year of passing 12th + next 2 years.</p>
+                                        <p><strong>Eligibility (JEE Advanced):</strong> Must qualify JEE Main (top ~2.5 Lakh candidates) & meet 12th % criteria (e.g., 75% aggregate or top 20 percentile - varies, check official site) or be in final year of 12th.</p>
+                                        <p><a href="https://jeemain.nta.nic.in/" target="_blank" rel="noopener noreferrer">JEE Main (NTA)</a> | <a href="https://jeeadv.ac.in/" target="_blank" rel="noopener noreferrer">JEE Advanced</a></p>
+                                    </div>
+                                    <li class="clickable" data-target="statecet-engg-info">State CETs (e.g., MHT-CET, KCET, EAMCET) <span class="toggle-icon">+</span></li>
+                                    <div class="eligibility hidden" id="statecet-engg-info">
+                                        <p><strong>Eligibility:</strong> Varies by state. Generally requires 12th with PCM and min percentage (often 45-50%). Domicile rules apply. Check specific state's CET website.</p>
+                                    </div>
+                                    <li>BITSAT, VITEEE, SRMJEEE, MET (Manipal), etc. (Private/Deemed University Exams)</li>
+                                </ul>
+                                <strong>Career Prospects:</strong> Software, Civil, Mechanical, Electrical, Electronics, Computer Science, Aerospace, Chemical Engg., etc.
+                            </div>
+                        </div>
+
+                        <div class="node option-node clickable" data-target="arch-details">
+                            <span>Architecture (B.Arch)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="arch-details">
+                            <div class="node detail-node">
+                                <strong>Key Exams:</strong>
+                                <ul>
+                                    <li class="clickable" data-target="nata-info">NATA (National Aptitude Test in Architecture) <span class="toggle-icon">+</span></li>
+                                    <div class="eligibility hidden" id="nata-info">
+                                        <p><strong>Eligibility:</strong> Passed 10+2 with Physics, Chemistry & Maths OR 10+3 Diploma with Maths. Min 50% aggregate in PCM and 50% overall in 10+2 / Diploma.</p>
+                                        <p><a href="https://www.nata.in/" target="_blank" rel="noopener noreferrer">Official NATA Website</a></p>
+                                    </div>
+                                    <li>JEE Main (Paper 2A - B.Arch)</li>
+                                </ul>
+                                <strong>Career Prospects:</strong> Architect, Urban Planner, Interior Designer, Landscape Architect.
+                            </div>
+                        </div>
+
+                        <div class="node option-node clickable" data-target="bsc-pcm-details">
+                            <span>B.Sc. (Physics, Chemistry, Maths, CS, IT, Stats, etc.)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="bsc-pcm-details">
+                            <div class="node detail-node">
+                                <strong>Key Exams:</strong>
+                                <ul>
+                                    <li class="clickable" data-target="cuet-ug-bscpcm-info">CUET-UG (Common University Entrance Test) <span class="toggle-icon">+</span></li>
+                                    <div class="eligibility hidden" id="cuet-ug-bscpcm-info">
+                                        <p><strong>Eligibility:</strong> Passed 12th. Specific subject combinations required for different B.Sc courses vary by university. Check eligibility mapping on CUET/University website.</p>
+                                        <p><a href="https://exams.nta.ac.in/CUET-UG/" target="_blank" rel="noopener noreferrer">Official CUET-UG Website</a></p>
+                                    </div>
+                                    <li>State University Entrances / Merit-based admission</li>
+                                    <li>NEST (Integrated M.Sc. at NISER/CEBS)</li>
+                                     <li>IAT (IISER Aptitude Test for BS-MS)</li>
+                                </ul>
+                                <strong>Career Prospects:</strong> Scientist, Researcher, Teacher/Professor (after higher studies), Data Analyst, Statistician, IT Professional, Lab Technician.
+                            </div>
+                        </div>
+
+                         <div class="node option-node clickable" data-target="bca-details-pcm">
+                            <span>BCA (Bachelor of Computer Applications)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="bca-details-pcm">
+                            <div class="node detail-node">
+                                <strong>Key Exams:</strong>
+                                <ul>
+                                     <li>CUET-UG (For Central Universities)</li>
+                                     <li>University Specific Entrance Tests (e.g., IPU CET)</li>
+                                     <li>Merit-based admission in many colleges</li>
+                                </ul>
+                                <p><strong>Eligibility (General):</strong> Passed 10+2. Many universities require Maths/Computer Science as a subject in 12th. Check specific institution criteria.</p>
+                                <strong>Career Prospects:</strong> Software Developer, Web Developer, System Analyst, Network Administrator, Database Manager (often requires further specialization or MCA).
+                            </div>
+                        </div>
+
+                         <div class="node option-node clickable" data-target="nda-details">
+                            <span>Defence (via NDA - National Defence Academy)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="nda-details">
+                            <div class="node detail-node">
+                                <strong>Key Exam:</strong>
+                                <ul>
+                                    <li class="clickable" data-target="nda-exam-info">UPSC NDA & NA Exam <span class="toggle-icon">+</span></li>
+                                    <div class="eligibility hidden" id="nda-exam-info">
+                                        <p><strong>Eligibility (Army Wing):</strong> 12th Pass (any stream). <strong>(Air Force/Naval Wings):</strong> 12th Pass with Physics, Chemistry & Maths. Strict age limits (approx 16.5-19.5 years, unmarried male/female). Physical standards apply.</p>
+                                        <p><a href="https://upsc.gov.in/" target="_blank" rel="noopener noreferrer">UPSC Official Website</a></p>
+                                    </div>
+                                </ul>
+                                <strong>Career Prospects:</strong> Officer in Indian Army, Navy, or Air Force.
+                            </div>
+                        </div>
+
+                         <div class="node option-node"><span>B.Des (Design), Integrated M.Sc., Merchant Navy courses, etc.</span></div>
+
+                    </div>
+                </div>
+
+                <div class="branch-container">
+                     <div class="node branch-node clickable" data-target="pcb-options">
+                        <span>Science (PCB - Physics, Chemistry, Biology)</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="options hidden" id="pcb-options">
+
+                         <div class="node option-node clickable" data-target="medical-details">
+                            <span>Medical (MBBS, BDS, AYUSH)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="medical-details">
+                            <div class="node detail-node">
+                                <strong>Key Exam:</strong>
+                                <ul>
+                                    <li class="clickable" data-target="neet-info">NEET-UG (National Eligibility cum Entrance Test) <span class="toggle-icon">+</span></li>
+                                    <div class="eligibility hidden" id="neet-info">
+                                        <p><strong>Eligibility:</strong> Passed 12th with Physics, Chemistry, Biology/Biotechnology & English individually. Minimum 50% aggregate in PCB (40% for SC/ST/OBC-NCL, 45% for PwD). Age: Min 17 years as of Dec 31 of admission year.</p>
+                                         <p><a href="https://exams.nta.ac.in/NEET/" target="_blank" rel="noopener noreferrer">Official NEET-UG Website (NTA)</a></p>
+                                    </div>
+                                </ul>
+                                <strong>Courses Covered by NEET:</strong> MBBS, BDS, BAMS (Ayurveda), BHMS (Homeopathy), BUMS (Unani), BSMS (Siddha), B.V.Sc & AH (Veterinary - some seats).
+                                <strong>Career Prospects:</strong> Doctor (various specializations), Dentist, AYUSH Practitioner.
+                            </div>
+                        </div>
+
+                        <div class="node option-node clickable" data-target="vet-details">
+                             <span>Veterinary Science (B.V.Sc & AH)</span>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="details hidden" id="vet-details">
+                             <div class="node detail-node">
+                                 <strong>Key Exams:</strong>
+                                 <ul>
+                                     <li>NEET-UG (For 15% All India Quota & many state seats)</li>
+                                     <li>State Level Entrances (Some states may have separate exams)</li>
+                                     <li>ICAR AIEEA (Limited seats in some universities)</li>
+                                 </ul>
+                                 <p><strong>Eligibility (General):</strong> Similar to NEET eligibility (12th PCB + English, min percentage). Check VCI/State norms.</p>
+                                 <strong>Career Prospects:</strong> Veterinarian (Govt./Private/Own Clinic), Researcher, Animal Husbandry Officer.
+                             </div>
+                         </div>
+
+                        <div class="node option-node clickable" data-target="pharm-details">
+                            <span>Pharmacy (B.Pharm)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                         <div class="details hidden" id="pharm-details">
+                             <div class="node detail-node">
+                                 <strong>Key Exams:</strong>
+                                 <ul>
+                                     <li>State CETs (e.g., MHT-CET Pharmacy, WBJEE Pharmacy)</li>
+                                      <li>CUET-UG (For some central/participating universities)</li>
+                                      <li>University Specific Exams (e.g., BITSAT Pharmacy)</li>
+                                 </ul>
+                                 <p><strong>Eligibility (General):</strong> 10+2 with PCB or PCM. Min percentage required varies. Check Pharmacy Council of India (PCI) & specific college norms.</p>
+                                 <strong>Career Prospects:</strong> Pharmacist (Retail/Hospital), Production/QA/QC in Pharma Industry, Medical Representative, Drug Inspector (Govt.).
+                             </div>
+                         </div>
+
+                        <div class="node option-node clickable" data-target="nursing-details">
+                            <span>Nursing (B.Sc Nursing)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="nursing-details">
+                             <div class="node detail-node">
+                                 <strong>Key Exams:</strong>
+                                 <ul>
+                                      <li>AIIMS Nursing Entrance</li>
+                                      <li>JIPMER Nursing Entrance</li>
+                                      <li>NEET-UG (Some institutions may use NEET scores - check specific college)</li>
+                                      <li>State Level Nursing Entrances / University Exams</li>
+                                 </ul>
+                                 <p><strong>Eligibility (General):</strong> 10+2 with PCB & English. Minimum percentage required (often 45-50%). Check Indian Nursing Council (INC) & specific college norms.</p>
+                                 <strong>Career Prospects:</strong> Staff Nurse, Nursing Supervisor, Educator, Administrator in Hospitals/Clinics/Community Health.
+                             </div>
+                         </div>
+
+                         <div class="node option-node clickable" data-target="paramed-details">
+                            <span>Allied Health / Paramedical (BPT, BMLT, B.Optom, etc.)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                         <div class="details hidden" id="paramed-details">
+                             <div class="node detail-node">
+                                 <strong>Courses:</strong> BPT (Physiotherapy), BMLT (Medical Lab Tech), B.Sc Radiology/Imaging Tech, B.Optom (Optometry), B.Sc OT Technology, B.Sc Dialysis Tech, etc.
+                                 <strong>Key Exams:</strong>
+                                 <ul>
+                                     <li>University Specific Entrances</li>
+                                     <li>State Level Paramedical Entrances</li>
+                                     <li>Merit-based admissions are common</li>
+                                 </ul>
+                                  <p><strong>Eligibility (General):</strong> 10+2 with PCB. Minimum percentage varies. Check specific course/college norms.</p>
+                                 <strong>Career Prospects:</strong> Physiotherapist, Lab Technician, Radiographer, Optometrist, Operation Theatre Technician, Dialysis Technician.
+                             </div>
+                         </div>
+
+                        <div class="node option-node clickable" data-target="bsc-pcb-details">
+                            <span>B.Sc. (Botany, Zoology, Microbio, Biotech, Life Sci, etc.)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                         <div class="details hidden" id="bsc-pcb-details">
+                             <div class="node detail-node">
+                                 <strong>Key Exams:</strong>
+                                 <ul>
+                                     <li class="clickable" data-target="cuet-ug-bscpcb-info">CUET-UG (Common University Entrance Test) <span class="toggle-icon">+</span></li>
+                                    <div class="eligibility hidden" id="cuet-ug-bscpcb-info">
+                                        <p><strong>Eligibility:</strong> Passed 12th with PCB or relevant science subjects. Specific combinations required vary by course/university. Check CUET/University website.</p>
+                                        <p><a href="https://exams.nta.ac.in/CUET-UG/" target="_blank" rel="noopener noreferrer">Official CUET-UG Website</a></p>
+                                    </div>
+                                    <li>State University Entrances / Merit-based admission</li>
+                                    <li>ICAR AIEEA (For B.Sc Agriculture, Horticulture, Fisheries, etc.)</li>
+                                    <li>NEST (Integrated M.Sc. at NISER/CEBS)</li>
+                                    <li>IAT (IISER Aptitude Test for BS-MS)</li>
+                                 </ul>
+                                 <strong>Career Prospects:</strong> Researcher, Scientist, Teacher/Professor (after higher studies), Lab Technician, Biotechnologist, Microbiologist, Agriculturist, Horticulturist, Environmental Scientist.
+                             </div>
+                         </div>
+
+                    </div>
+                </div>
+
+                <div class="branch-container">
+                    <div class="node branch-node clickable" data-target="commerce-options">
+                        <span>Commerce</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="options hidden" id="commerce-options">
+
+                         <div class="node option-node clickable" data-target="bcom-details">
+                            <span>B.Com (Bachelor of Commerce - Gen/Hons)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="bcom-details">
+                            <div class="node detail-node">
+                                <strong>Key Exams / Admission:</strong>
+                                <ul>
+                                    <li>CUET-UG (For Central/Participating Universities)</li>
+                                    <li>Merit-based (based on 12th marks) in many State Universities/Colleges</li>
+                                     <li>University Specific Entrance Tests (e.g., NPAT for NMIMS)</li>
+                                </ul>
+                                 <p><strong>Eligibility (General):</strong> 10+2 Commerce. Some universities might prefer/require Maths for Hons. Check specific university criteria.</p>
+                                <strong>Career Prospects:</strong> Accountant, Tax Consultant, Auditor (often needs CA), Banking, Financial Services, Insurance, Govt Jobs (e.g., SSC CGL Auditor/Accountant). Foundation for CA/CS/CMA, MBA.
+                            </div>
+                        </div>
+
+                         <div class="node option-node clickable" data-target="bba-details">
+                            <span>BBA / BMS (Management)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="bba-details">
+                            <div class="node detail-node">
+                                <strong>Key Exams:</strong>
+                                <ul>
+                                    <li>CUET-UG</li>
+                                    <li>IPMAT (For 5-year Integrated MBA at IIM Indore/Rohtak/etc.)</li>
+                                    <li>NPAT (NMIMS), SET (Symbiosis), DU JAT (If conducted), Christ University ET</li>
+                                    <li>University Specific Entrances / Merit-based</li>
+                                </ul>
+                                 <p><strong>Eligibility (General):</strong> 10+2 (Any stream, often Commerce preferred). Many top colleges require/prefer Maths. Check specific institution criteria.</p>
+                                <strong>Career Prospects:</strong> Entry-level Management roles, Marketing, Sales, HR, Operations, Banking. Good foundation for MBA.
+                            </div>
+                        </div>
+
+                         <div class="node option-node clickable" data-target="prof-comm-details">
+                            <span>Professional Courses (CA / CS / CMA)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="prof-comm-details">
+                            <div class="node detail-node">
+                                <strong>Courses & Institutes:</strong>
+                                <ul>
+                                     <li>CA (Chartered Accountancy) - Institute of Chartered Accountants of India (ICAI)</li>
+                                     <li>CS (Company Secretary) - Institute of Company Secretaries of India (ICSI)</li>
+                                     <li>CMA (Cost & Management Accountancy) - Institute of Cost Accountants of India (ICMAI)</li>
+                                </ul>
+                                <strong>Admission Process:</strong> Register for Foundation course after 10+2 (any stream). Clear Foundation -> Intermediate -> Final exams along with practical training.
+                                <p><strong>Exams:</strong> Foundation Exams conducted by respective institutes.</p>
+                                <p><a href="https://www.icai.org/" target="_blank">ICAI</a> | <a href="https://www.icsi.edu/" target="_blank">ICSI</a> | <a href="https://icmai.in/" target="_blank">ICMAI</a></p>
+                                <strong>Career Prospects:</strong> Chartered Accountant, Company Secretary, Cost Accountant in industry or practice. High demand roles.
+                            </div>
+                        </div>
+
+                        <div class="node option-node clickable" data-target="eco-hons-details">
+                            <span>B.A. / B.Sc. Economics (Hons)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="eco-hons-details">
+                             <div class="node detail-node">
+                                 <strong>Key Exams:</strong>
+                                 <ul>
+                                     <li>CUET-UG (Most prominent route now)</li>
+                                     <li>University Specific Entrances (e.g., Christ University ET)</li>
+                                 </ul>
+                                  <p><strong>Eligibility (General):</strong> 10+2. Strong preference / requirement for Mathematics in 12th by most top universities. Check specific university criteria.</p>
+                                 <strong>Career Prospects:</strong> Economist, Policy Analyst, Data Analyst, Financial Analyst, Consultant (often requires Master's degree). Foundation for Indian Economic Service (IES), MBA.
+                             </div>
+                         </div>
+
+                          <div class="node option-node clickable" data-target="law-integ-comm-details">
+                             <span>Law (Integrated 5-Year B.Com LLB / BBA LLB)</span>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="details hidden" id="law-integ-comm-details">
+                             <div class="node detail-node">
+                                 <strong>Key Exams:</strong>
+                                 <ul>
+                                     <li class="clickable" data-target="clat-info-comm">CLAT (Common Law Admission Test) <span class="toggle-icon">+</span></li>
+                                      <div class="eligibility hidden" id="clat-info-comm">
+                                         <p><strong>Eligibility:</strong> 10+2 (Any stream) with min 45% marks (40% for SC/ST). No upper age limit.</p>
+                                          <p><a href="https://consortiumofnlus.ac.in/" target="_blank" rel="noopener noreferrer">CLAT Consortium</a></p>
+                                     </div>
+                                      <li>AILET (NLU Delhi), LSAT-India (Private Univ.), SET (Symbiosis Law), State Law CETs</li>
+                                 </ul>
+                                 <strong>Career Prospects:</strong> Lawyer (Corporate, Litigation, etc.), Judge (after experience/Judicial Services Exam), Legal Advisor, Law Professor.
+                             </div>
+                         </div>
+
+                         <div class="node option-node"><span>B.Des (Design), BCA (if Maths), Hotel Management, etc.</span></div>
+
+                    </div>
+                </div>
+
+                <div class="branch-container">
+                     <div class="node branch-node clickable" data-target="arts-options">
+                        <span>Arts / Humanities</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                     <div class="options hidden" id="arts-options">
+
+                        <div class="node option-node clickable" data-target="ba-details">
+                            <span>B.A. (Bachelor of Arts - Various Subjects)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="ba-details">
+                            <div class="node detail-node">
+                                <strong>Subjects:</strong> History, Political Science, Sociology, Psychology, English Lit., Geography, Philosophy, Languages, etc.
+                                <strong>Key Exams / Admission:</strong>
+                                <ul>
+                                     <li>CUET-UG (Major route for Central/Participating Universities)</li>
+                                     <li>Merit-based (12th marks) in many State Universities/Colleges</li>
+                                     <li>University Specific Entrance Tests</li>
+                                </ul>
+                                 <p><strong>Eligibility (General):</strong> 10+2 (Any stream, usually Arts preferred). Specific subject requirements might exist for Hons courses in some universities.</p>
+                                <strong>Career Prospects:</strong> Teacher/Professor (needs higher studies), Content Writer, Editor, Journalist, Archaeologist, Historian, Political Analyst, Psychologist (needs Master's), Social Worker, Civil Services, Govt Jobs.
+                            </div>
+                        </div>
+
+                         <div class="node option-node clickable" data-target="law-integ-arts-details">
+                             <span>Law (Integrated 5-Year B.A. LLB)</span>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="details hidden" id="law-integ-arts-details">
+                             <div class="node detail-node">
+                                 <strong>Key Exams:</strong>
+                                 <ul>
+                                     <li class="clickable" data-target="clat-info-arts">CLAT (Common Law Admission Test) <span class="toggle-icon">+</span></li>
+                                      <div class="eligibility hidden" id="clat-info-arts">
+                                         <p><strong>Eligibility:</strong> 10+2 (Any stream) with min 45% marks (40% for SC/ST). No upper age limit.</p>
+                                          <p><a href="https://consortiumofnlus.ac.in/" target="_blank" rel="noopener noreferrer">CLAT Consortium</a></p>
+                                     </div>
+                                      <li>AILET (NLU Delhi), LSAT-India (Private Univ.), SET (Symbiosis Law), State Law CETs</li>
+                                 </ul>
+                                 <strong>Career Prospects:</strong> Lawyer (Corporate, Litigation, Human Rights, etc.), Judge, Legal Advisor, Policy Analyst.
+                             </div>
+                         </div>
+
+                         <div class="node option-node clickable" data-target="jmc-details">
+                            <span>Journalism & Mass Communication (BJMC / BA JMC)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                         <div class="details hidden" id="jmc-details">
+                             <div class="node detail-node">
+                                 <strong>Key Exams / Admission:</strong>
+                                 <ul>
+                                      <li>CUET-UG (For some universities)</li>
+                                      <li>University Specific Entrance Tests (e.g., IPU CET, Symbiosis SET, JMI Entrance)</li>
+                                      <li>Merit-based in some institutions</li>
+                                 </ul>
+                                 <p><strong>Eligibility (General):</strong> 10+2 (Any stream).</p>
+                                 <strong>Career Prospects:</strong> Journalist, Reporter, Editor, Content Writer, Public Relations Officer, Advertising Executive, Radio Jockey, TV Anchor.
+                             </div>
+                         </div>
+
+                        <div class="node option-node clickable" data-target="hm-details">
+                            <span>Hotel Management (BHM / B.Sc HM)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="hm-details">
+                             <div class="node detail-node">
+                                 <strong>Key Exams:</strong>
+                                 <ul>
+                                     <li>NCHM JEE (National Council for Hotel Management) - For IHMs</li>
+                                     <li>University/College Specific Entrances (e.g., WGSHA Manipal, Christ University ET)</li>
+                                 </ul>
+                                  <p><strong>Eligibility (General):</strong> 10+2 (Any stream) with English as a compulsory subject. Age limits may apply. Check NCHM/College norms.</p>
+                                 <strong>Career Prospects:</strong> Managerial roles in Hotels, Restaurants, Airlines, Cruise Lines, Catering Companies, Event Management.
+                             </div>
+                         </div>
+
+                        <div class="node option-node clickable" data-target="design-arts-details">
+                            <span>Design (B.Des / BFA)</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="design-arts-details">
+                             <div class="node detail-node">
+                                 <strong>Fields:</strong> Fashion, Textile, Graphic, Product, Interior Design, Fine Arts (Painting, Sculpture, etc.)
+                                 <strong>Key Exams:</strong>
+                                 <ul>
+                                     <li>UCEED (IIT Bombay - for B.Des in IITs)</li>
+                                     <li>NID DAT (National Institute of Design)</li>
+                                     <li>NIFT Entrance Exam (National Institutes of Fashion Technology)</li>
+                                     <li>CUET-UG (For BFA/Design in some universities)</li>
+                                      <li>College Specific Aptitude Tests / Portfolio Reviews</li>
+                                 </ul>
+                                  <p><strong>Eligibility (General):</strong> 10+2 (Any stream usually). Specific requirements & portfolio needs vary.</p>
+                                 <strong>Career Prospects:</strong> Fashion Designer, Graphic Designer, Animator, Product Designer, Interior Designer, Artist, Art Director.
+                             </div>
+                         </div>
+
+                         <div class="node option-node"><span>Social Work (BSW), Elementary Education (B.El.Ed), Event Management Courses, Travel & Tourism Courses, etc.</span></div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="node important-note">
+                <strong>Important Note:</strong> This guide provides general information. Course availability, specific eligibility criteria (including 12th subjects, minimum percentages, age limits), exam patterns, and admission processes vary significantly between institutions and change year to year. **Always refer to the official websites** of the entrance exams (NTA, CLAT Consortium, ICAI, etc.) and the specific colleges/universities you are interested in for the most accurate and up-to-date details. Research thoroughly and plan early!
+            </div>
+
+        </div></main>
+
+    <footer>
+        <p>&copy; 2025 Career Guidance Portal. Information purposes only.</p>
+        <p>Current Date: <span id="current-date"></span></p>
+    </footer>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+    const clickables = document.querySelectorAll('.clickable');
+    const today = new Date();
+    const dateElement = document.getElementById('current-date');
+
+    if (dateElement) {
+        dateElement.textContent = today.toLocaleDateString('en-IN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    }
+
+    clickables.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetId = item.getAttribute('data-target');
+            if (!targetId) return;
+
+            const targetElement = document.getElementById(targetId);
+            if (!targetElement) return; 
+
+            const isHidden = targetElement.classList.toggle('hidden');
+
+            item.classList.toggle('open', !isHidden);
+
+            const icon = item.querySelector('.toggle-icon');
+            if (icon) {
+                icon.textContent = isHidden ? '+' : '-';
+            }
+
+        });
+    });
+});
+    </script>
+</body>
+</html>

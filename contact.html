@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style type="text/css">
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient to( right, #6a11cb, #2575fc); 
+    color: #333;
+    line-height: 1.6;
+}
+   .navbar {
+            background-color: #1e3c72; 
+            padding: 0.8rem 0; 
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem; 
+            font-weight: bold;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+
+         .navbar .container {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             width: 100%;
+         }
+
+
+        .navbar ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 2rem; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white; 
+            font-weight: 500; 
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+         .navbar ul li a:hover {
+             background-color: rgba(255, 255, 255, 0.1); 
+         }
+
+
+        .navbar .logo {
+            height: 40px; 
+             filter: invert(1); 
+        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+.contact-us-section {
+    background-color: #aed0d0;
+    padding: 60px 0; 
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    margin-top: 40px; 
+    border-radius: 10px; 
+}
+
+.contact-us-section h2 {
+    margin-bottom: 40px; 
+    color: #333;
+    font-size: 36px; 
+}
+
+.contact-info {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    justify-content: center;
+}
+
+.contact-item {
+    background-color: #d7dcdb;
+    padding: 30px 20px; 
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.contact-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-item i {
+    font-size: 48px; 
+    color: #6a11cb; 
+    margin-bottom: 20px; 
+}
+
+.contact-item h3 {
+    margin-top: 0;
+    color: #555;
+    font-size: 22px; 
+}
+
+.contact-item p {
+    margin-bottom: 0;
+    color: #666;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.contact-item a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #2575fc; 
+    text-decoration: underline;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 40px; 
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-links {
+    margin-bottom: 20px; 
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 28px; 
+    margin: 0 12px; 
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2575fc; 
+}
+
+.footer-links {
+    margin-bottom: 20px; 
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #2575fc; 
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+@media (max-width: 768px) {
+    .contact-us-section h2 {
+        font-size: 28px;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr; 
+    }
+
+    .contact-item {
+        width: 90%; 
+        margin: 0 auto; 
+    }
+
+    .social-links a {
+        font-size: 22px; 
+    }
+
+    .footer-links a {
+        display: block; 
+        margin: 10px 0; 
+    }
+}
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <img style="height: 70px; width: 200px;" src="Care (1)(1).png" alt="Career Guidance Logo" >
+            <ul>
+                <li style="font-size: x-large;"><a href="Home.html">Home</a></li>
+                <li style="font-size: x-large;"><a href="About.html">About us</a></li>
+                <li style="font-size: x-large;"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="contact-us-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p><a href="#">regondashiva2414@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p><a href="#">+91 7093211385</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>I am student at mvsr engineering college<br>nadergul(city) Ranga reddy(Dist), india</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/yourpage" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/yourchannel" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="/terms">Terms and Conditions</a>
+                <a href="/privacy">Privacy Policy</a> </div>
+            <p>© 2025 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

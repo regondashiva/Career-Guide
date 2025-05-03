@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance After Graduation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    color: #333;
+    padding-bottom: 60px; 
+}
+.navbar1 {
+            background-color: #1e3c72; 
+            padding: 0.8rem 0; 
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem; 
+            font-weight: bold;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+         .navbar1 .container {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             width: 100%;
+         }
+
+
+        .navbar1 ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 2rem; 
+            margin: -150px; 
+            padding: 0; 
+        }
+
+        .navbar1 ul li a {
+            text-decoration: none;
+            color: white; 
+            font-weight: 500; 
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+         .navbar1 ul li a:hover {
+             background-color: rgba(255, 255, 255, 0.1); 
+         }
+
+
+        .navbar1 .logo {
+            height: 40px; 
+             filter: invert(1); 
+        }
+
+header, footer {
+    background-color: #005f73; 
+    color: #ffffff;
+    text-align: center;
+    padding: 5rem 0;
+    margin-bottom: 2rem;
+    
+}
+footer {
+     margin-top: 3rem;
+     padding: 0.8rem 0;
+     font-size: 0.9em;
+     position: relative; 
+     bottom: 0;
+     width: 100%;
+ }
+header h1 {
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #005f73;
+}
+
+
+.flowchart {
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.node {
+    background-color: #e0f7fa; 
+    border: 1px solid #b2ebf2; 
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    position: relative; 
+}
+
+.start-node {
+    background-color: #0077b6; 
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border-color: #023e8a;
+}
+
+.branch-node, .option-node {
+    background-color: #90e0ef; 
+    border-color: #48cae4;
+    font-weight: 500;
+}
+
+.detail-node {
+    background-color: #ffffff;
+    border: 1px dashed #a8dadc; 
+    padding: 0.8rem;
+    margin-top: -0.5rem; 
+     margin-left: 1.5rem; 
+}
+.detail-node strong {
+    color: #005f73;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.detail-node ul {
+    list-style: none; 
+    padding-left: 0;
+}
+.detail-node li {
+    padding: 0.3rem 0;
+    border-bottom: 1px dotted #eee;
+}
+.detail-node li:last-child {
+    border-bottom: none;
+}
+
+.eligibility {
+    background-color: #f8f9fa; 
+    border: 1px solid #e9ecef;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    margin-left: 1.5rem; 
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.eligibility p {
+    margin-bottom: 0.5rem;
+}
+.eligibility strong {
+    color: #d90429; 
+}
+.eligibility a {
+    color: #0077b6;
+    text-decoration: none;
+}
+.eligibility a:hover {
+    text-decoration: underline;
+}
+
+.important-note {
+    background-color: #fff3cd; 
+    border-color: #ffeeba;
+    color: #856404; 
+    font-size: 0.95em;
+    margin-top: 1.5rem;
+}
+.important-note strong {
+    color: #d90429; 
+}
+
+
+.branches {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 2rem;
+    margin-top: 1rem;
+    padding-left: 1.5rem; 
+    border-left: 2px solid #0077b6; 
+}
+
+.branch-container {
+     flex: 1; 
+     min-width: 250px; 
+}
+
+.options {
+    padding-left: 1.5rem; 
+    margin-top: 1rem;
+     border-left: 2px dashed #48cae4; 
+}
+.details {
+     padding-left: 0; 
+     margin-top: 1rem;
+     
+ }
+
+
+.clickable {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.clickable:hover {
+    background-color: #ade8f4;
+}
+.detail-node li.clickable:hover {
+     background-color: #e9f7fa; 
+ }
+
+.toggle-icon {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.clickable.open .toggle-icon {
+    transform: rotate(45deg); 
+}
+
+
+
+@media (max-width: 768px) {
+    .branches {
+        flex-direction: column; 
+        padding-left: 1rem;
+        gap: 1rem;
+         border-left: none; 
+    }
+    .options, .details, .eligibility, .detail-node {
+        margin-left: 0.5rem; 
+        padding-left: 0.5rem;
+    }
+     .node {
+         padding: 0.6rem 1rem;
+     }
+     header h1 { font-size: 1.5em; }
+}
+        </style>
+</head>
+<body>
+    <header class="navbar1">
+        <div class="container">
+            <div  class="logo-box">
+                <img style="height: 70px; width: 200px;" src="Care (1)(1).png" alt="Career Guidance Logo" >
+            </div>
+            <ul>
+                <li style="font-size: x-large;"><a href="Home.html">Home</a></li>
+                <li style="font-size: x-large;"><a href="About.html">About us</a></li>
+                <li style="font-size: x-large;"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <header style="padding-top: 130px;">
+        <h1>Career Guidance: After Bachelor's Degree</h1>
+        <p>Explore higher study options and entrance exams in India.</p>
+    </header>
+
+    <main class="container">
+        <h2>Choose Your Graduation Background:</h2>
+
+        <div class="flowchart">
+            <div class="node start-node">
+                <span>Completed Bachelor's Degree</span>
+            </div>
+
+            <div class="branches">
+                <div class="branch-container">
+                    <div class="node branch-node clickable" data-target="btech-options">
+                        <span>B.E. / B.Tech</span>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="options hidden" id="btech-options">
+                        <div class="node option-node clickable" data-target="mtech-details">
+                            <span>M.Tech / M.E.</span>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="mtech-details">
+                            <div class="node detail-node">
+                                <strong>Exams:</strong>
+                                <ul>
+                                    <li class="clickable" data-target="gate-info">GATE (Graduate Aptitude Test in Engineering) <span class="toggle-icon">+</span></li>
+                                    <div class="eligibility hidden" id="gate-info">
+                                        <p><strong>Eligibility (General):</strong> Completed B.E./B.Tech or in final year. Specific discipline requirements apply. No age limit. Valid score for 3 years for admissions/PSUs.</p>
+                                        <p><a href="https://gate.iitk.ac.in/" target="_blank" rel="noopener noreferrer">Official GATE Website (Example - Check Current Year's Site)</a></p>
+                                    </div>
+                                    <li class="clickable" data-target="pgcet-info">State Level PGCETs (e.g., Karnataka PGCET, TS PGECET) <span class="toggle-icon">+</span></li>
+                                    <div class="eligibility hidden" id="pgcet-info">
+                                        <p><strong>Eligibility (General):</strong> Varies by state. Usually requires B.E./B.Tech from a recognized university within the state or nationally. Check specific state's PGCET notification.</p>
+                                    </div>
+                                     <li>Specific Institute Exams (e.g., IIIT Hyderabad PGEE)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="node option-node clickable" data-target="mba-details-btech">
+                            <span>MBA (Master of Business Administration)</span>
+                             <span class="toggle-icon">+</span>
+                        </div>
+                         <div class="details hidden" id="mba-details-btech">
+                            <div class="node detail-node">
+                                <strong>Exams:</strong>
+                                <ul>
+                                    <li class="clickable" data-target="cat-info-btech">CAT (Common Admission Test) <span class="toggle-icon">+</span></li>
+                                    <div class="eligibility hidden" id="cat-info-btech">
+                                        <p><strong>Eligibility (General):</strong> Bachelor's Degree (any discipline, including B.Tech) with min 50% marks (45% for SC/ST/PwD). Final year students can apply.</p>
+                                         <p><a href="https://iimcat.ac.in" target="_blank" rel="noopener noreferrer">Official CAT Website</a></p>
+                                    </div>
+                                    <li class="clickable" data-target="xat-info-btech">XAT (Xavier Aptitude Test) <span class="toggle-icon">+</span></li>
+                                     <div class="eligibility hidden" id="xat-info-btech">
+                                        <p><strong>Eligibility (General):</strong> Bachelor's Degree (any discipline). Final year students can apply. No percentage bar specified by XLRI.</p>
+                                         <p><a href="https://xatonline.in/" target="_blank" rel="noopener noreferrer">Official XAT Website</a></p>
+                                    </div>
+                                    <li>CMAT, MAT, ATMA, GMAT, State MBA CETs</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="node option-node clickable" data-target="ms-abroad-details">
+                            <span>M.S. (Master of Science) - Abroad</span>
+                             <span class="toggle-icon">+</span>
+                        </div>
+                         <div class="details hidden" id="ms-abroad-details">
+                             <div class="node detail-node">
+                                 <strong>Requirements (General):</strong>
+                                 <ul>
+                                     <li>Relevant B.Tech degree with good GPA.</li>
+                                     <li>GRE (Graduate Record Examinations).</li>
+                                     <li>TOEFL/IELTS (English Proficiency).</li>
+                                     <li>Statement of Purpose (SOP), Letters of Recommendation (LORs).</li>
+                                     <li>Varies significantly by country and university.</li>
+                                 </ul>
+                             </div>
+                         </div>
+
+                         <div class="node option-node clickable" data-target="govt-btech-details">
+                            <span>Govt. Jobs / PSUs</span>
+                             <span class="toggle-icon">+</span>
+                        </div>
+                         <div class="details hidden" id="govt-btech-details">
+                             <div class="node detail-node">
+                                 <strong>Routes:</strong>
+                                 <ul>
+                                     <li>UPSC ESE (Engineering Services Examination) - For specific core engineering branches.</li>
+                                     <li>PSU Recruitment through GATE scores (e.g., IOCL, NTPC, ONGC).</li>
+                                      <li>UPSC CSE (Civil Services Exam) - Open to all graduates.</li>
+                                     <li>SSC JE (Junior Engineer) / Other technical posts.</li>
+                                      <li>Banking Sector (IBPS/SBI Specialist Officers - IT Officer).</li>
+                                 </ul>
+                                 <p><strong>Eligibility:</strong> Varies greatly based on the specific job/exam. Check official notifications.</p>
+                             </div>
+                         </div>
+
+                         <div class="node option-node"><span>Research / Ph.D. (often requires Master's first)</span></div>
+
+                    </div>
+                </div>
+
+                <div class="branch-container">
+                    <div class="node branch-node clickable" data-target="other-degree-options">
+                        <span>Other Degree (B.Sc., B.A., B.Com, etc.)</span>
+                         <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="options hidden" id="other-degree-options">
+                         <div class="node option-node clickable" data-target="masters-details">
+                            <span>Master's Degree (M.Sc./M.A./M.Com)</span>
+                             <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="details hidden" id="masters-details">
+                            <div class="node detail-node">
+                                <strong>Exams:</strong>
+                                <ul>
+                                    <li class="clickable" data-target="cuet-pg-info">CUET-PG (Common University Entrance Test - PG) <span class="toggle-icon">+</span></li>
+                                     <div class="eligibility hidden" id="cuet-pg-info">
+                                        <p><strong>Eligibility (General):</strong> Relevant Bachelor's Degree. Specific subject requirements and minimum percentages vary by university and course. Check specific university criteria via CUET-PG portal.</p>
+                                         <p><a href="https://pgcuet.samarth.ac.in/" target="_blank" rel="noopener noreferrer">Official CUET-PG Website</a></p>
+                                    </div>
+                                    <li class="clickable" data-target="iit-jam-info">IIT JAM (For M.Sc. in IITs/IISc) <span class="toggle-icon">+</span></li>
+                                     <div class="eligibility hidden" id="iit-jam-info">
+                                        <p><strong>Eligibility (General):</strong> Bachelor's Degree with the required subjects (e.g., Physics/Maths/Chem/Bio) and minimum 55% (50% for SC/ST/PwD). Final year students eligible.</p>
+                                         <p><a href="https://jam.iitm.ac.in/" target="_blank" rel="noopener noreferrer">Official JAM Website (Example - Check Current Year's Site)</a></p>
+                                    </div>
+                                    <li>TISSNET (Tata Institute of Social Sciences - MA programs)</li>
+                                     <li>Specific University Entrance Exams</li>
+                                </ul>
+                             </div>
+                         </div>
+
+                         <div class="node option-node clickable" data-target="mba-details-other">
+                            <span>MBA (Master of Business Administration)</span>
+                             <span class="toggle-icon">+</span>
+                        </div>
+                         <div class="details hidden" id="mba-details-other">
+                            <div class="node detail-node">
+                                 <strong>Exams:</strong>
+                                <ul>
+                                    <li class="clickable" data-target="cat-info-other">CAT (Common Admission Test) <span class="toggle-icon">+</span></li>
+                                    <div class="eligibility hidden" id="cat-info-other">
+                                        <p><strong>Eligibility (General):</strong> Bachelor's Degree (any discipline) with min 50% marks (45% for SC/ST/PwD). Final year students can apply.</p>
+                                         <p><a href="https://iimcat.ac.in" target="_blank" rel="noopener noreferrer">Official CAT Website</a></p>
+                                    </div>
+                                    <li class="clickable" data-target="xat-info-other">XAT (Xavier Aptitude Test) <span class="toggle-icon">+</span></li>
+                                     <div class="eligibility hidden" id="xat-info-other">
+                                        <p><strong>Eligibility (General):</strong> Bachelor's Degree (any discipline). Final year students can apply. No percentage bar specified by XLRI.</p>
+                                         <p><a href="https://xatonline.in/" target="_blank" rel="noopener noreferrer">Official XAT Website</a></p>
+                                    </div>
+                                    <li>CMAT, MAT, ATMA, GMAT, State MBA CETs</li>
+                                </ul>
+                            </div>
+                         </div>
+
+                         <div class="node option-node clickable" data-target="mca-details">
+                            <span>MCA (Master of Computer Applications)</span>
+                             <span class="toggle-icon">+</span>
+                        </div>
+                         <div class="details hidden" id="mca-details">
+                            <div class="node detail-node">
+                                 <strong>Exams:</strong>
+                                 <ul>
+                                     <li class="clickable" data-target="nimcet-info">NIMCET (NIT MCA Common Entrance Test) <span class="toggle-icon">+</span></li>
+                                      <div class="eligibility hidden" id="nimcet-info">
+                                        <p><strong>Eligibility (General):</strong> B.Sc./BCA/B.Sc.(Hons)/BIT with Mathematics/Statistics as one subject OR B.E./B.Tech. Minimum 60% marks (55% for SC/ST). Final year eligible.</p>
+                                          <p><a href="https://www.nimcet.in/" target="_blank" rel="noopener noreferrer">Official NIMCET Website</a></p>
+                                    </div>
+                                      <li>CUET-PG (For MCA in participating universities)</li>
+                                      <li>State Level MCA CETs</li>
+                                 </ul>
+                             </div>
+                         </div>
+
+                         <div class="node option-node clickable" data-target="llb-details">
+                            <span>Law (3-Year LL.B.)</span>
+                             <span class="toggle-icon">+</span>
+                        </div>
+                         <div class="details hidden" id="llb-details">
+                             <div class="node detail-node">
+                                 <strong>Exams:</strong>
+                                 <ul>
+                                      <li>State Level Law CETs (e.g., MAH CET Law, TS LAWCET)</li>
+                                      <li>DU LLB Entrance Exam</li>
+                                      <li>LSAT India (Accepted by some private universities)</li>
+                                       <li>BHU PET (For Law)</li>
+                                 </ul>
+                                  <p><strong>Eligibility (General):</strong> Any Bachelor's Degree with minimum percentage (varies, often 45-50%).</p>
+                             </div>
+                         </div>
+
+                          <div class="node option-node clickable" data-target="bed-details">
+                            <span>B.Ed. (Bachelor of Education)</span>
+                             <span class="toggle-icon">+</span>
+                        </div>
+                         <div class="details hidden" id="bed-details">
+                             <div class="node detail-node">
+                                 <strong>Exams:</strong>
+                                 <ul>
+                                     <li>State Level B.Ed. CETs (e.g., UP B.Ed JEE, TS EdCET)</li>
+                                     <li>CUET-PG (For B.Ed. in participating universities)</li>
+                                      <li>University Specific Exams</li>
+                                 </ul>
+                                  <p><strong>Eligibility (General):</strong> Bachelor's or Master's Degree with minimum 50-55% marks. Subject requirements may apply based on teaching specialization.</p>
+                             </div>
+                         </div>
+
+                          <div class="node option-node clickable" data-target="govt-other-details">
+                            <span>Govt. Jobs</span>
+                             <span class="toggle-icon">+</span>
+                        </div>
+                         <div class="details hidden" id="govt-other-details">
+                            <div class="node detail-node">
+                                 <strong>Exams:</strong>
+                                 <ul>
+                                      <li>UPSC CSE (Civil Services Exam)</li>
+                                      <li>SSC CGL (Combined Graduate Level)</li>
+                                      <li>IBPS PO / Clerk (Banking)</li>
+                                      <li>SBI PO / Clerk (Banking)</li>
+                                      <li>RBI Grade B / Assistant</li>
+                                      <li>State PSC Exams</li>
+                                      <li>Railway Recruitment Boards (RRB) Exams</li>
+                                 </ul>
+                                 <p><strong>Eligibility (General):</strong> Usually any Bachelor's Degree. Age limits and specific requirements vary. Check official notifications.</p>
+                             </div>
+                         </div>
+
+                    </div>
+                 </div>
+
+            </div>
+
+            <div class="node important-note">
+                <strong>Note:</strong> Eligibility criteria are general guidelines. Always refer to the official websites of the exams and institutions for the latest, most accurate information, including specific subject requirements, percentage criteria, age limits, and reservation policies. Deadlines are crucial!
+            </div>
+
+        </div></main>
+
+    <footer>
+        <p>&copy; 2025 Career Guidance Portal. Information purposes only.</p>
+        <p>Current Date: <span id="current-date"></span></p>
+    </footer>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+    const clickables = document.querySelectorAll('.clickable');
+    const today = new Date();
+    const dateElement = document.getElementById('current-date');
+
+ 
+    if (dateElement) {
+        dateElement.textContent = today.toLocaleDateString('en-IN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    }
+
+    clickables.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetId = item.getAttribute('data-target');
+            if (!targetId) return; 
+
+            const targetElement = document.getElementById(targetId);
+            if (!targetElement) return; 
+
+            
+            const isHidden = targetElement.classList.toggle('hidden');
+
+
+            item.classList.toggle('open', !isHidden);
+
+          
+            const icon = item.querySelector('.toggle-icon');
+            if (icon) {
+                icon.textContent = isHidden ? '+' : '-';
+            }
+        });
+    });
+});
+    </script>
+</body>
+</html>
