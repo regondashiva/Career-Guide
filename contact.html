@@ -68,6 +68,23 @@
             height: 40px; 
              filter: invert(1); 
         }
+        .mobile-menu-button {
+            display: none; /* Hidden by default */
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            outline: none;
+        }
+
+        .mobile-menu-button .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+        }
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -219,14 +236,21 @@ footer p {
     </style>
 </head>
 <body>
-    <header class="navbar">
+ <header class="navbar">
         <div class="container">
-            <img style="height: 70px; width: 200px;" src="Care (1)(1).png" alt="Career Guidance Logo" >
-            <ul>
-                <li style="font-size: x-large;"><a href="Home.html">Home</a></li>
-                <li style="font-size: x-large;"><a href="About.html">About us</a></li>
-                <li style="font-size: x-large;"><a href="contact.html">Contact</a></li>
-            </ul>
+            <img style="height: 70px; width: auto;" src="Care (1)(1).png" alt="Career Guidance Logo" class="logo">
+            <nav>
+                <button class="mobile-menu-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul>
+                    <li style="font-size: x-large;"><a href="Home.html">Home</a></li>
+                    <li style="font-size: x-large;"><a href="About.html">About us</a></li>
+                    <li style="font-size: x-large;"><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
