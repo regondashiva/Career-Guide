@@ -13,65 +13,67 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f7f6;
-    color: #333;
-    padding-bottom: 60px; 
-}
-.navbar1 {
-            background-color: #1e3c72; 
-            padding: 0.8rem 0; 
+            font-family: "Inter", sans-serif;
+            /* Tailwind handles background color: bg-gray-100 */
+            /* Tailwind handles padding: py-8 on container */
+        }
+
+        /* Navbar Styling (keeping custom as it's already defined) */
+        .navbar {
+            background-color: #1e3c72; /* Dark blue */
+            padding: 1rem;
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 1rem; 
+            font-size: 1rem; /* Adjusted font size */
             font-weight: bold;
-            position: fixed; 
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
+            height: 90px;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
         }
 
-         .navbar1 .container {
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-             width: 100%;
-         }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px; /* Match container max-width */
+            margin: 0 auto; /* Center the container */
+            padding: 0 1rem; /* Add some padding */
+        }
 
-
-        .navbar1 ul {
+        .navbar-links {
             display: flex;
             justify-content: flex-end;
             list-style: none;
-            gap: 2rem; 
-            margin: -150px; 
-            padding: 0; 
+            gap: 2rem; /* Adjusted gap */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
         }
 
-        .navbar1 ul li a {
+        .navbar-links li a {
             text-decoration: none;
-            color: white; 
-            font-weight: 500; 
+            color: white; /* White color for better contrast */
+            font-weight: 600; /* Adjusted weight */
             padding: 0.5rem 0.8rem;
             border-radius: 4px;
             transition: background-color 0.3s ease;
         }
-
-         .navbar1 ul li a:hover {
-             background-color: rgba(255, 255, 255, 0.1); 
-         }
-
-
-        .navbar1 .logo {
-            height: 40px; 
-             filter: invert(1); 
+         .navbar-links li a:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Subtle hover */
         }
+
+
+        .navbar .logo {
+            height: 70px; /* Set logo height */
+            width: auto;
+             filter: invert(1); /* Optional: invert logo color if it's dark */
+        }
+
+        /* Mobile Menu Button */
         .mobile-menu-button {
             display: none; /* Hidden by default */
             cursor: pointer;
@@ -88,6 +90,12 @@ body {
             background-color: white;
             margin: 5px auto;
             transition: all 0.3s ease-in-out;
+        }
+
+        /* Logo Card Styling */
+        .logo-card {
+            flex-shrink: 0;
+            /* Tailwind handles: bg-gradient, text-white, w-64, h-40, flex, flex-col, items-center, justify-center, rounded-lg, shadow-xl, transform, transition, duration-300, hover:scale-105, cursor-pointer, p-4 */
         }
 header, footer {
     background-color: #005f73; 
@@ -281,25 +289,86 @@ h2 {
      }
      header h1 { font-size: 1.5em; }
 }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start; /* Align logo to the left on smaller screens */
+                padding: 0.8rem;
+                height: auto; /* Adjust height for stacked content */
+            }
+
+            .navbar .container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0;
+            }
+
+            .navbar-links {
+                display: none; /* Hide links by default on smaller screens */
+                flex-direction: column;
+                width: 100%;
+                margin-top: 0.5rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separator */
+            }
+
+            .navbar-links.active {
+                display: flex; /* Show links when active class is present */
+            }
+
+            .navbar-links li {
+                width: 100%;
+                text-align: center;
+                margin: 0.5rem 0;
+            }
+
+            .navbar-links li a {
+                display: block; /* Make links full width for easier tapping */
+                padding: 0.75rem 1rem;
+            }
+
+            .mobile-menu-button {
+                display: block; /* Show hamburger button */
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .mobile-menu-button.open .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .mobile-menu-button.open .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-button.open .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
     </style>
-<body>
-  <header class="navbar">
+<body class="bg-gray-100">
+
+    <div class="navbar">
         <div class="container">
-            <img style="height: 70px; width: 200px;" src="Care (1)(1).png" alt="Career Guidance Logo" >
+            <img style="height: 70px; width: auto;" src="Care (1)(1).png" alt="Career Guidance Logo" >
             <nav>
                 <button class="mobile-menu-button">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </button>
-                <ul>
-                    <li style="font-size: x-large;"><a href="Home.html">Home</a></li>
-                    <li style="font-size: x-large;"><a href="About.html">About us</a></li>
+                <ul class="navbar-links">
+                    <li style="font-size: x-large;"><a href="index.html">Home</a></li>
+                    <li style="font-size: x-large;"><a href="aboutus.html">About us</a></li>
                     <li style="font-size: x-large;"><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
-    </header>
+    </div>
   <header style="padding-top: 130px;">
         <h1>Career Guidance: After 12th Standard</h1>
         <p>Explore common streams, courses, and entrance exams in India.</p>
