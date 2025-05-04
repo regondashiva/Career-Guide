@@ -45,21 +45,21 @@ h3{
 
         
         .navbar {
-            background-color: #1e3c72; /* Dark blue */
-            padding: 0.8rem 0; /* Adjusted padding */
+            background-color: #1e3c72; 
+            padding: 0.8rem 0; 
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 1rem; /* Adjusted font size */
+            font-size: 1rem; 
             font-weight: bold;
-            position: fixed; /* Fixed navbar */
+            position: fixed; 
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
             height: 70px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
         }
 
          .navbar .container {
@@ -74,34 +74,33 @@ h3{
             display: flex;
             justify-content: flex-end;
             list-style: none;
-            gap: 2rem; /* Adjusted gap */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
+            gap: 2rem; 
+            margin: 0; 
+            padding: 0;
         }
 
         .navbar ul li a {
             text-decoration: none;
-            color: white; /* White color for better contrast */
-            font-weight: 500; /* Adjusted weight */
+            color: white; 
+            font-weight: 500; 
             padding: 0.5rem 0.8rem;
             border-radius: 4px;
             transition: background-color 0.3s ease;
         }
 
          .navbar ul li a:hover {
-             background-color: rgba(255, 255, 255, 0.1); /* Subtle hover */
+             background-color: rgba(255, 255, 255, 0.1); 
          }
 
 
         .navbar .logo {
-            height: 40px; /* Set logo height */
-            /* Add styles for logo if needed */
-             filter: invert(1); /* Optional: invert logo color if it's dark */
+            height: 40px; 
+            filter: invert(1); 
         }
 
-        /* --- Mobile Menu Button --- */
+        
         .mobile-menu-button {
-            display: none; /* Hidden by default */
+            display: none; 
             cursor: pointer;
             background: none;
             border: none;
@@ -118,13 +117,13 @@ h3{
             transition: all 0.3s ease-in-out;
         }
 
-        /* --- Main Content (Hero Section) --- */
+       
         .main-content {
             display: flex;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            padding: 80px 0; /* Vertical padding */
+            flex-wrap: wrap; 
+            padding: 80px 0;
             align-items: center;
-            background: linear-gradient(to bottom, #eef7ff, #f8f9fa); /* Subtle gradient background */
+            background: linear-gradient(to bottom, #eef7ff, #f8f9fa); 
         }
 
         .main-content .container {
@@ -132,17 +131,17 @@ h3{
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            gap: 3rem; /* Gap between left and right sections */
+            gap: 3rem; 
         }
 
         .left {
-            flex: 1; /* Allow left section to grow */
-            min-width: 300px; /* Minimum width before wrapping */
-            padding-right: 3rem; /* Space to the right of text */
+            flex: 1; 
+            min-width: 300px; 
+            padding-right: 3rem; 
         }
 
         .left h1 {
-            font-size: 3.5rem; /* Adjusted size */
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
             line-height: 1.2;
@@ -150,36 +149,36 @@ h3{
 
         .left h1 span {
             display: block;
-            font-size: 2.8rem; /* Adjusted size */
+            font-size: 2.8rem;
             font-style: italic;
-            color: #008080; /* Teal for span */
+            color: #008080; 
             margin-top: 0.5rem;
         }
 
         .welcome {
-            color: #dc3545; /* Red from original palette */
+            color: #dc3545; 
             font-style: italic;
-            margin: 1.5rem 0; /* Adjusted margin */
-            font-size: 1.2rem; /* Adjusted size */
+            margin: 1.5rem 0;
+            font-size: 1.2rem; 
             font-weight: 500;
         }
 
         .left p {
-            font-size: 1.1rem; /* Adjusted size */
+            font-size: 1.1rem;
             line-height: 1.6;
-            text-align: justify; /* Align text left */
-            margin-bottom: 2.5rem; /* Adjusted margin */
+            text-align: justify; 
+            margin-bottom: 2.5rem;
         }
 
         .buttons {
             display: flex;
-            gap: 1.5rem; /* Adjusted gap */
-            flex-wrap: wrap; /* Allow buttons to wrap */
+            gap: 1.5rem; 
+            flex-wrap: wrap; 
         }
 
         .buttons button:hover {
-            transform: translateY(-3px); /* Lift button on hover */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add shadow on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
 
@@ -238,13 +237,13 @@ h3{
             filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
         }
 
-        /* --- Media Queries for Responsiveness --- */
+    
         @media (max-width: 768px) {
             .navbar ul {
-                display: none; /* Hide the navigation links on smaller screens */
+                display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 70px; /* Adjust based on navbar height */
+                top: 70px;
                 left: 0;
                 background-color: #1e3c72;
                 width: 100%;
@@ -254,7 +253,7 @@ h3{
             }
 
             .navbar ul.active {
-                display: flex; /* Show the menu when the 'active' class is added */
+                display: flex;
             }
 
             .navbar ul li {
@@ -263,11 +262,11 @@ h3{
 
             .navbar ul li a {
                 padding: 0.8rem 1rem;
-                display: block; /* Make links full width for easier tapping */
+                display: block; 
             }
 
             .mobile-menu-button {
-                display: block; /* Show the hamburger button on smaller screens */
+                display: block; 
             }
 
             .mobile-menu-button.open .bar:nth-child(1) {
@@ -371,7 +370,7 @@ h3{
             }
             .navbar .logo {
                 height: 35px;
-                width: auto; /* Maintain aspect ratio */
+                width: auto; 
             }
 
             .main-content {
