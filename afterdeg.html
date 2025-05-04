@@ -665,5 +665,14 @@ h2 {
     });
 });
     </script>
+    <script>
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const navbarLinks = document.querySelector('.navbar-links');
+
+        mobileMenuButton.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+            mobileMenuButton.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
