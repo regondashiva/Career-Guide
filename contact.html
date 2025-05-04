@@ -355,7 +355,14 @@ footer p {
             <p>© 2025 Your Company. All rights reserved.</p>
         </div>
     </footer>
+<script>
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const navbarLinks = document.querySelector('.navbar-links');
 
-    <script src="script.js"></script>
+        mobileMenuButton.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+            mobileMenuButton.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
