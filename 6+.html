@@ -14,24 +14,22 @@
 
 body {
             font-family: "Inter", sans-serif;
-            /* Tailwind handles background color: bg-gray-100 */
-            /* Tailwind handles padding: py-8 on container */
-        }
+      }
 
 .navbar {
-            background-color: #1e3c72; /* Dark blue */
+            background-color: #1e3c72; 
             padding: 1rem;
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 1rem; /* Adjusted font size */
+            font-size: 1rem; 
             font-weight: bold;
             position: sticky;
             top: 0;
             height: 90px;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
         }
 
         .navbar .container {
@@ -39,42 +37,41 @@ body {
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            max-width: 1200px; /* Match container max-width */
-            margin: 0 auto; /* Center the container */
-            padding: 0 1rem; /* Add some padding */
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 1rem; 
         }
 
         .navbar-links {
             display: flex;
             justify-content: flex-end;
             list-style: none;
-            gap: 2rem; /* Adjusted gap */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
+            gap: 2rem; 
+            margin: 0; 
+            padding: 0; 
         }
 
         .navbar-links li a {
             text-decoration: none;
-            color: white; /* White color for better contrast */
-            font-weight: 600; /* Adjusted weight */
+            color: white; 
+            font-weight: 600; 
             padding: 0.5rem 0.8rem;
             border-radius: 4px;
             transition: background-color 0.3s ease;
         }
          .navbar-links li a:hover {
-            background-color: rgba(255, 255, 255, 0.1); /* Subtle hover */
+            background-color: rgba(255, 255, 255, 0.1); 
         }
 
 
         .navbar .logo {
-            height: 70px; /* Set logo height */
+            height: 70px; 
             width: auto;
-             filter: invert(1); /* Optional: invert logo color if it's dark */
+             filter: invert(1); 
         }
 
-        /* Mobile Menu Button */
-        .mobile-menu-button {
-            display: none; /* Hidden by default */
+      .mobile-menu-button {
+            display: none;
             cursor: pointer;
             background: none;
             border: none;
@@ -91,11 +88,9 @@ body {
             transition: all 0.3s ease-in-out;
         }
 
-        /* Logo Card Styling */
-        .logo-card {
+       .logo-card {
             flex-shrink: 0;
-            /* Tailwind handles: bg-gradient, text-white, w-64, h-40, flex, flex-col, items-center, justify-center, rounded-lg, shadow-xl, transform, transition, duration-300, hover:scale-105, cursor-pointer, p-4 */
-        }
+      }
 
 header, footer {
     background-color: #005f73; 
@@ -117,13 +112,12 @@ header h1 {
 }
 
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
-                align-items: flex-start; /* Align logo to the left on smaller screens */
+                align-items: flex-start; 
                 padding: 0.8rem;
-                height: auto; /* Adjust height for stacked content */
+                height: auto; 
             }
 
             .navbar .container {
@@ -133,15 +127,15 @@ header h1 {
             }
 
             .navbar-links {
-                display: none; /* Hide links by default on smaller screens */
+                display: none; 
                 flex-direction: column;
                 width: 100%;
                 margin-top: 0.5rem;
-                border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separator */
+                border-top: 1px solid rgba(255, 255, 255, 0.2); 
             }
 
             .navbar-links.active {
-                display: flex; /* Show links when active class is present */
+                display: flex; 
             }
 
             .navbar-links li {
@@ -151,12 +145,12 @@ header h1 {
             }
 
             .navbar-links li a {
-                display: block; /* Make links full width for easier tapping */
+                display: block; 
                 padding: 0.75rem 1rem;
             }
 
             .mobile-menu-button {
-                display: block; /* Show hamburger button */
+                display: block; 
                 position: absolute;
                 top: 1rem;
                 right: 1rem;
