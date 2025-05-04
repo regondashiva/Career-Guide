@@ -117,6 +117,67 @@ header h1 {
 }
 
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start; /* Align logo to the left on smaller screens */
+                padding: 0.8rem;
+                height: auto; /* Adjust height for stacked content */
+            }
+
+            .navbar .container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0;
+            }
+
+            .navbar-links {
+                display: none; /* Hide links by default on smaller screens */
+                flex-direction: column;
+                width: 100%;
+                margin-top: 0.5rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separator */
+            }
+
+            .navbar-links.active {
+                display: flex; /* Show links when active class is present */
+            }
+
+            .navbar-links li {
+                width: 100%;
+                text-align: center;
+                margin: 0.5rem 0;
+            }
+
+            .navbar-links li a {
+                display: block; /* Make links full width for easier tapping */
+                padding: 0.75rem 1rem;
+            }
+
+            .mobile-menu-button {
+                display: block; /* Show hamburger button */
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .mobile-menu-button.open .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .mobile-menu-button.open .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-button.open .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
 h2 {
     text-align: center;
     margin-bottom: 2rem;
